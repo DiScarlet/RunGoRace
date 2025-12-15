@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvo028jaotgtp"]
+[gd_scene load_steps=15 format=3 uid="uid://cvo028jaotgtp"]
 
+[ext_resource type="Script" uid="uid://cx8jx6gcx2xby" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://dh6l2ux5dykmn" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://cpcxu7usohy4g" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://ch4h35jn7kbxf" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ly6xmruj0hg1" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://pkoya08bafo6" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://murrm26lc8uw" path="res://scenes/slime.tscn" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://gaqi7oclqfks" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -208,6 +210,20 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_gee14")
+
+[node name="Coins_Hint" type="Label" parent="GameManager"]
+offset_left = 25.0
+offset_top = -81.0
+offset_right = 261.0
+offset_bottom = -58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "You collected 0 coins"
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 12)
 tile_set = SubResource("TileSet_lbhrr")
@@ -218,7 +234,7 @@ layer_1/name = "Mid"
 layer_1/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 196607, 0, 0, 196606, 0, 0, 131074, 0, 0, 131075, 0, 0, 65546, 262144, 0, 11, 262144, 0, -131060, 262144, 0, -131059, 262144, 0, -65524, 262144, 1, -65523, 262144, 1, 13, 262144, 1, 12, 262144, 1, 65549, 262144, 1, 65548, 262144, 1, 131084, 262144, 1, 131085, 262144, 1, 65547, 262144, 1, 131083, 262144, 1, 131082, 262144, 1, 65536, 0, 1, 65537, 0, 1, 131073, 0, 1, 131072, 0, 1, 262142, 0, 1, 327678, 0, 1, 327679, 0, 1, 262143, 0, 1, 196608, 0, 1, 262144, 0, 1, 262145, 0, 1, 196609, 0, 1, 196610, 0, 1, 262146, 0, 1, 262147, 0, 1, 196611, 0, 1, 262154, 262144, 1, 196618, 262144, 1, 196619, 262144, 1, 262155, 262144, 1, 262156, 262144, 1, 196620, 262144, 1, 196621, 262144, 1, 262157, 262144, 1, 131080, 655360, 0, 131081, 720896, 0, -196595, 0, 5, 65539, 65536, 5, 65534, 131072, 4, -262131, 65536, 3, -327667, 65536, 4, -262138, 0, 4, -131066, 0, 0, -327674, 0, 3, -196602, 0, 5, -196601, 65536, 5, -131065, 0, 0, -262136, 131072, 4, -131064, 0, 0, -65514, 393216, 0, -65510, 393216, 0, 22, 393216, 1, 65558, 393216, 1, 131094, 393216, 1, 131095, 393216, 1, 131097, 393216, 1, 131098, 393216, 1, 65562, 393216, 1, 26, 393216, 1, 65559, 393216, 1, 65561, 393216, 1, 65560, 655360, 0, 131079, 655360, 0, 131078, 655360, 0, 131077, 655360, 0, 131076, 589824, 0, 65544, 65536, 6)
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(13, -8)
+position = Vector2(15, 11)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -6)
@@ -269,3 +285,27 @@ autoplay = "move_platform"
 
 [node name="Slime" parent="." instance=ExtResource("6_p57ef")]
 position = Vector2(377, 15)
+
+[node name="Hints" type="Node" parent="."]
+
+[node name="Go_Hint" type="Label" parent="Hints"]
+offset_left = -159.0
+offset_top = -29.0
+offset_right = 77.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(1, 0.6901961, 0.6, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Use arrows or \"A\" and \"D\" 
+to move"
+horizontal_alignment = 1
+
+[node name="Jump_Hint" type="Label" parent="Hints"]
+offset_left = 43.0
+offset_top = 19.0
+offset_right = 279.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 0.6901961, 0.6, 1)
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Press Space to Jump"
