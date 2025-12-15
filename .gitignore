@@ -1,3 +1,27 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+# Godot-specific
+.export/
+.import/
+*.import
+*.tmp
+*.log
+*.mono/
+*.mono_assemblies/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Godot-generated
+icon.svg.import
+
+# Optional: if using Visual Studio/VS Code
+.vscode/
+.idea/
+
+addons/godot_super-wakatime
+
+LICENSE
+README.md
