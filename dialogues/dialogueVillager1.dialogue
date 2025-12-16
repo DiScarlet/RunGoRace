@@ -1,0 +1,35 @@
+~ start
+Villager: Oh! A traveler… You startled me.
+- Sorry. I didn’t mean to. => greeting_2
+- I’m just passing through. => greeting_2
+
+~ greeting_2
+Villager: No harm done. Not many choose this road anymore. Dangerous times.
+- Have you seen anyone else around? => info_1
+- What is this place? => info_2
+
+~ info_1
+Villager: A few… but most don’t return. Monsters roam freely after sunset.
+- I can handle myself. => recognition_trigger
+
+~ info_2
+Villager: A forgotten village. Best left forgotten.
+- You seem nervous. => recognition_trigger
+
+~ recognition_trigger
+Villager (suspicious): Wait…
+- What is it? => recognition_1
+
+~ recognition_1
+Villager (fear): That armor… I’ve seen it before.
+- I don’t know what you mean. => recognition_2
+
+~ recognition_2
+Villager (hostile): You’re one of *them*.
+- Them? => hostile_1
+
+~ hostile_1
+Villager (angry): You bring ruin wherever you walk. I won’t let it happen again!
+do GameState.request_attack.emit()
+# The villager reacts to the attack
+Villager: [wait=3] Gwah! Stay back!
