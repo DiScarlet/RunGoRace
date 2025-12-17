@@ -1,0 +1,39 @@
+~ act2_start
+Monk (startled, taking a step back): Wait… no… that can’t be you. After all this time… why are you here?
+- Who are you? => act2_recognition
+- …(silent) => act2_recognition
+- Easy. I’m not here to hurt you. => act2_recognition
+
+~ act2_recognition
+Monk (tense, eyes fixed on the armor): I thought the Black Crescent finally sent you to finish the job. I recognize that armor… even after all these years.
+- I don’t remember wearing it. I don’t remember much at all. => act2_reveal
+- I’m done with fighting. => act2_reveal
+- …(silent) => act2_reveal
+
+~ act2_reveal
+Monk (exhales slowly, pain beneath his voice): So it’s true… you really don’t remember. I begged you not to join them. I stood right where you’re standing now, and I begged. But they don’t let people refuse. After you left… they came back. My family paid the price for your obedience.
+- I swear, I don’t remember any of it. => act2_empathy
+- I’m sorry… for everything. => act2_empathy
+- …(silent) => act2_empathy
+
+~ act2_empathy
+Monk (voice softening): I see it in your eyes. You’re not pretending. Something broke inside you… memories torn away like pages burned from a book. If you truly don’t remember, then… maybe I don’t have the strength to hate you anymore.
+- I wish I could remember who I was. => act2_story
+- I’m just trying to stay alive now. => act2_story
+- …(silent) => act2_story
+
+~ act2_story
+Monk (looking away, reflective): We used to talk about saving people. You wanted to stand at the front, shield raised, protecting everyone else. I chose prayer, you chose the sword… and somehow both of us failed. When the Crescent took you, it felt like I lost you long before I lost my family.
+- I don’t know how to answer that. => act2_emotional
+- …(silent) => act2_emotional
+- If there’s a way to make this right, I’ll try. => act2_emotional
+
+~ act2_emotional
+Monk (a faint, tired smile): Some wounds don’t heal. They just teach us how to breathe with the pain. I'm not strong enough for revenge. I wanted to see if there was still a trace of the friend I once knew… before the world twisted us apart.
+- I understand. => act2_farewell
+- Goodbye… my friend. => act2_farewell
+- …(silent) => act2_farewell
+
+~ act2_farewell
+Monk: Walk carefully. The Crescent hunts what it loses, and mercy is not their way. But whatever you’ve become… I’ll remember who you were. That’s enough for me.
+=> END
