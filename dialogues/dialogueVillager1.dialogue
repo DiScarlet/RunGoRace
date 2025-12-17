@@ -31,5 +31,64 @@ Villager (hostile): You’re one of *them*.
 ~ hostile_1
 Villager (angry): You bring ruin wherever you walk. I won’t let it happen again!
 do GameState.request_attack.emit()
-# The villager reacts to the attack
-Villager: [wait=3] Gwah! Stay back!
+- [Attack]
+- [Defend yourself]
+do GameState.player_attack_villager.emit()
+Villager: [wait=1] Gwah! Stay back!
+- Why did you attack me? => lore_start
+- Who are you? => lore_start
+
+~ lore_start
+Villager (nervous): Please… spare me! I only attacked to defend myself. That armor you wear… You are from the Order of the Black Crescent?
+- Never heard of them. The Black Crescent? => lore_1
+- Not and I don’t care about orders. => lore_1
+
+~ lore_1
+Villager (hesitant): They are a notorious group of knights, feared across these lands. They enforce rules that no one dares challenge. Those who resist… rarely survive.
+- Why are they so feared? => lore_2
+- What do you mean “rules”? => lore_2
+
+~ lore_2
+Villager (grim): The Black Crescent controls the roads, the villages, even the forests. Travelers are taxed, villagers obey, and anyone wearing that armor is recognized immediately.
+- So that’s why you attacked me. => lore_3
+- What happened to those who resisted? => lore_3
+
+~ lore_3
+Villager (anxious): Many… disappeared, taken by the knights or their enforcers. They even killed my brother when he tried to protect our village. It is a dangerous world, traveler.
+- Monsters? => lore_4
+- I see… tell me more. => lore_4
+
+~ lore_4
+Villager (reluctant): The “monsters” are not beasts in the usual sense. They are creations of the Black Crescent—guards, beasts, or enchanted soldiers. Anyone who challenges the order is hunted.
+- How do villagers survive? => lore_5
+- I need to get through safely. => lore_5
+
+~ lore_5
+Villager (thinking): Villagers hide, flee, or obey. Some brave souls resist in secret. If you wear that armor, you are immediately recognized, and danger follows you everywhere.
+- Understood. => continue_journey
+- I have more questions. => questions_start
+
+~ questions_start
+Villager (reluctant): Ask quickly… I don’t have much time.
+- Who are the Black Crescent exactly? => questions_org
+- What are these rules they enforce? => questions_rules
+- How do people survive the monsters? => questions_monsters
+
+~ questions_org
+Villager (grim): The Black Crescent is an order of elite knights and enforcers. They claim loyalty to the crown, but in truth they act for themselves.
+- I see. => questions_start
+- Continue. => questions_start
+
+~ questions_rules
+Villager (stern): Their rules are simple: obey, pay tribute, or be hunted. Roads, villages, forests… all fall under their control.
+- Got it. => questions_start
+- Continue. => questions_start
+
+~ questions_monsters
+Villager (worried): People survive by hiding, fleeing at night, or bribing patrols. Some strong fighters resist, but they are few.
+- Okay. => continue_journey
+- Enough for now. => continue_journey
+
+~ continue_journey
+Villager: Be careful. With that armor, the world watches you, and danger is never far.  
+=> END

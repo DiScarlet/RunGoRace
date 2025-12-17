@@ -12,6 +12,18 @@ func _ready():
 	# Only listen for Dialogue Manager to freeze/unfreeze player
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
+	GameState.player_attack_villager.connect(_on_attack_command_received)
+	
+func _on_attack_command_received():
+	# 1. Stop movement animations
+	is_attacking = true
+	# 2. Play the attack
+	animated_sprite.play("attack1")
+	# 3. Wait for it to finish
+	await animated_sprite.animation_finished
+	# 4. Allow idle animations again
+	is_attacking = false
+	animated_sprite.play("default")
 	
 func _on_dialogue_started(_resource: DialogueResource):
 	is_frozen = true
@@ -25,7 +37,7 @@ func _physics_process(delta: float) -> void:
 	# 1. ALLOW ATTACK INPUT ALWAYS
 	# We check this first so the player can press 'L' to advance the dialogue
 	if Input.is_action_just_pressed("attack") and not is_attacking:
-		play_attack_logic()
+		_on_attack_command_received()
 		return
 
 	# 2. DIALOGUE & ATTACK LOCK
@@ -71,17 +83,3 @@ func _physics_process(delta: float) -> void:
 
 	# 8. EXECUTE MOVEMENT
 	move_and_slide()
-
-
-
-
-func _on_attack_command_received():
-	play_attack_logic()
-# New function to handle the attack sequence cleanly
-func play_attack_logic():
-	is_attacking = true
-	animated_sprite.play("attack1") # Ensure 'Loop' is OFF in Sprite Frames
-	await animated_sprite.animation_finished
-	is_attacking = false
-	# Tell the dialogue system the attack is finished
-	GameState.player_performed_attack.emit()
