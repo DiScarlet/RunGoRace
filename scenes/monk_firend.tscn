@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://dqnajtewxqmoc"]
+
+[ext_resource type="Texture2D" uid="uid://dnmq8p3qpdwwl" path="res://assets/FREE_Adventurer 2D Pixel Art/Sprites/IDLE/idle_down.png" id="1_1g0m4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75pkt"]
+atlas = ExtResource("1_1g0m4")
+region = Rect2(0, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpgqe"]
+atlas = ExtResource("1_1g0m4")
+region = Rect2(96, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bbox"]
+atlas = ExtResource("1_1g0m4")
+region = Rect2(192, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dmdt"]
+atlas = ExtResource("1_1g0m4")
+region = Rect2(288, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6txk"]
+atlas = ExtResource("1_1g0m4")
+region = Rect2(384, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syc0p"]
+atlas = ExtResource("1_1g0m4")
+region = Rect2(480, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7ap8"]
+atlas = ExtResource("1_1g0m4")
+region = Rect2(576, 0, 96, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6bnv"]
+atlas = ExtResource("1_1g0m4")
+region = Rect2(672, 0, 96, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2sl2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75pkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpgqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bbox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dmdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6txk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syc0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7ap8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6bnv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g0m4"]
+size = Vector2(36, 33)
+
+[node name="MonkFirend" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i2sl2")
+autoplay = "default"
+frame = 2
+frame_progress = 0.77207094
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 2.5)
+shape = SubResource("RectangleShape2D_1g0m4")
