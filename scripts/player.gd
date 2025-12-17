@@ -13,6 +13,13 @@ func _ready():
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	GameState.player_attack_villager.connect(_on_attack_command_received)
+	GameState.request_attack.connect(_on_got_attacked_command_received)
+	
+func _on_got_attacked_command_received():
+	print("was hurt")
+	animated_sprite.play("hurt")
+	await animated_sprite.animation_finished
+	animated_sprite.play("default")
 	
 func _on_attack_command_received():
 	# 1. Stop movement animations

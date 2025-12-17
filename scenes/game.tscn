@@ -1649,4 +1649,4 @@ position = Vector2(741, -382)
 shape = SubResource("RectangleShape2D_qouja")
 
 [node name="AngryVillager" parent="." instance=ExtResource("16_rysoc")]
-position = Vector2(2747, 20)
+position = Vector2(98, 21)

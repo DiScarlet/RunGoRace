@@ -7,10 +7,15 @@ var is_attacking: bool = false # Protects the attack animation
 func _ready():
 	# Connect to your proximity area
 	$Area2D.body_entered.connect(_on_player_entered)
-	
-	# Connect to your global signal (GS is your Autoload)
+	GameState.player_attack_villager.connect(_on_got_attacked_command_received)
 	GameState.request_attack.connect(_on_attack_command_received)
 
+func _on_got_attacked_command_received():
+	animated_sprite.play("hurt")
+	await animated_sprite.animation_finished
+	animated_sprite.play("default")
+	print("hurt vill")
+	
 func _on_player_entered(body):
 	if body is CharacterBody2D and not dialogue_triggered:
 		dialogue_triggered = true

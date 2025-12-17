@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5va8kknluxb4"]
+[gd_scene load_steps=19 format=3 uid="uid://b5va8kknluxb4"]
 
 [ext_resource type="Texture2D" uid="uid://dud233ncnn7a5" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="1_5476u"]
 [ext_resource type="Script" uid="uid://c6aiy7qu1pf85" path="res://scripts/angry_villager.gd" id="1_nhgpf"]
 [ext_resource type="Texture2D" uid="uid://v61y3pj0ax5r" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Attack-01/Attack-01-Sheet.png" id="2_c8sti"]
+[ext_resource type="Texture2D" uid="uid://b2je1q1n0gjn4" path="res://assets/Legacy-Fantasy - High Forest 2.3/Character/Hurt/Hurt-Sheet.png" id="4_vhak6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_patlc"]
 atlas = ExtResource("2_c8sti")
@@ -20,20 +21,36 @@ region = Rect2(192, 0, 96, 80)
 atlas = ExtResource("2_c8sti")
 region = Rect2(288, 0, 96, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nhgpf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_psext"]
 atlas = ExtResource("1_5476u")
 region = Rect2(0, 0, 64, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c8sti"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_udewm"]
 atlas = ExtResource("1_5476u")
 region = Rect2(64, 0, 64, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vhak6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_02cf1"]
 atlas = ExtResource("1_5476u")
 region = Rect2(128, 0, 64, 80)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rbi45"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rbwu"]
 atlas = ExtResource("1_5476u")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saxdf"]
+atlas = ExtResource("4_vhak6")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4pq3"]
+atlas = ExtResource("4_vhak6")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t747v"]
+atlas = ExtResource("4_vhak6")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elctg"]
+atlas = ExtResource("4_vhak6")
 region = Rect2(192, 0, 64, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_patlc"]
@@ -57,20 +74,37 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nhgpf")
+"texture": SubResource("AtlasTexture_psext")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c8sti")
+"texture": SubResource("AtlasTexture_udewm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vhak6")
+"texture": SubResource("AtlasTexture_02cf1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rbi45")
+"texture": SubResource("AtlasTexture_8rbwu")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saxdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4pq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t747v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elctg")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ref1w"]
@@ -81,10 +115,8 @@ script = ExtResource("1_nhgpf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_patlc")
-animation = &"attack1"
+animation = &"hurt"
 autoplay = "default"
-frame = 3
-frame_progress = 1.0
 
 [node name="DialogueController" type="Node" parent="."]
 
