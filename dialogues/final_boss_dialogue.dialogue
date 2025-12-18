@@ -61,6 +61,9 @@ Crescent Captain: Fear.
 Crescent Captain: Structure.
 Crescent Captain: Silence.
 
+- [Attack]
+do GameState.full_attack.emit()
+[wait=1]
 do GameState.crescent_captain_die.emit()
 
 Crescent Captain: [wait=2] Just remember…
@@ -68,7 +71,7 @@ Crescent Captain: Orders don’t corrupt people.
 Crescent Captain: They reveal them.
 
 Crescent Captain: The Crescent bows.
-
+do GameState.show_final_scene.emit()  
 => END
 
 
@@ -90,6 +93,6 @@ Crescent Captain: …
 Crescent Captain: Then go.
 Crescent Captain: The world will decide what follows.
 
-do GameState.drop_armor.emit()
+do GameState.show_final_scene.emit()  
 
 => END

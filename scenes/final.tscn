@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://b5va8kknluxb4" path="res://scenes/a_ngry_villager.tscn" id="8_po02c"]
 [ext_resource type="PackedScene" uid="uid://c2ewsa52sn6ad" path="res://scenes/final_boss.tscn" id="9_ju3dn"]
 [ext_resource type="PackedScene" uid="uid://dqnajtewxqmoc" path="res://scenes/monk_firend.tscn" id="10_j13vg"]
-[ext_resource type="PackedScene" uid="uid://dh6l2ux5dykmn" path="res://scenes/player.tscn" id="11_3a8fg"]
 [ext_resource type="Texture2D" uid="uid://cmrsm6jbgnehf" path="res://assets/GandalfHardcore FREE Platformer Assets/birds1.png" id="12_tm14p"]
 [ext_resource type="Texture2D" uid="uid://cs34nasrt2hws" path="res://assets/GandalfHardcore FREE Platformer Assets/birds4.png" id="13_jpiy6"]
+[ext_resource type="Texture2D" uid="uid://cqftuib1xkg8a" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet-export-Back.png" id="15_msjty"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3amsk"]
 texture = ExtResource("3_1rxmq")
@@ -272,10 +272,7 @@ position = Vector2(-25, 103)
 position = Vector2(31, 96)
 
 [node name="MonkFirend" parent="." instance=ExtResource("10_j13vg")]
-position = Vector2(84, 110)
-
-[node name="Player" parent="." instance=ExtResource("11_3a8fg")]
-position = Vector2(126, 120)
+position = Vector2(140, 110)
 
 [node name="Birds1" type="Sprite2D" parent="."]
 position = Vector2(-106, 56.5)
@@ -286,3 +283,9 @@ texture = ExtResource("12_tm14p")
 position = Vector2(215.25, -16.25)
 scale = Vector2(2.8333333, 2.5)
 texture = ExtResource("13_jpiy6")
+
+[node name="IdleSheetExportBack" type="Sprite2D" parent="."]
+position = Vector2(83, 111)
+texture = ExtResource("15_msjty")
+region_enabled = true
+region_rect = Rect2(0, 0, 46, 32)
