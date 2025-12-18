@@ -26,17 +26,17 @@ Crescent Captain: Hope is a dangerous thing, Commander.
 Crescent Captain: It makes people reckless.
 
 do GameState.full_attack.emit()
-[wait=0.1]
+[wait=0.3]
 do GameState.crescent_captain_attack.emit()
-[wait=0.1]
+[wait=1]
 - [Attack]
 do GameState.full_attack.emit()
-[wait=0.1]
+[wait=0.3]
 do GameState.crescent_captain_attack.emit()  
-[wait=0.1]
+[wait=1]
 - [Attack]
 do GameState.full_attack.emit()
-[wait=0.1]
+[wait=0.3]
 do GameState.crescent_captain_die.emit()  
 
 Crescent Captain: [wait=2] If you strike me down—

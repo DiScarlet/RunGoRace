@@ -1,0 +1,288 @@
+[gd_scene load_steps=23 format=3 uid="uid://gjo6k8iqum1m"]
+
+[ext_resource type="Script" uid="uid://djxaar7megsag" path="res://scripts/final.gd" id="1_msjty"]
+[ext_resource type="Texture2D" uid="uid://bbquoldpnrm86" path="res://assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_qkvop"]
+[ext_resource type="FontFile" uid="uid://gaqi7oclqfks" path="res://assets/fonts/PixelOperator8.ttf" id="2_op64y"]
+[ext_resource type="Texture2D" uid="uid://tlabgch7xc8j" path="res://assets/GandalfHardcore FREE Platformer Assets/Birch1.png" id="3_1rxmq"]
+[ext_resource type="Texture2D" uid="uid://bt53tyw58jmp3" path="res://assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="4_6b7v6"]
+[ext_resource type="Texture2D" uid="uid://buktnxgrijnmq" path="res://assets/GandalfHardcore FREE Platformer Assets/pixel Art Bonsai.png" id="5_msjty"]
+[ext_resource type="Texture2D" uid="uid://dd12nvn7b6iun" path="res://assets/GandalfHardcore FREE Platformer Assets/Weeping Willow1.png" id="6_1wbyy"]
+[ext_resource type="Texture2D" uid="uid://br72fh5d3ukok" path="res://assets/GandalfHardcore FREE Platformer Assets/sun.png" id="7_32mrs"]
+[ext_resource type="Texture2D" uid="uid://1rktilx5f6mt" path="res://assets/GandalfHardcore FREE Platformer Assets/hot air balloon.png" id="8_6b7v6"]
+[ext_resource type="PackedScene" uid="uid://b5va8kknluxb4" path="res://scenes/a_ngry_villager.tscn" id="8_po02c"]
+[ext_resource type="PackedScene" uid="uid://c2ewsa52sn6ad" path="res://scenes/final_boss.tscn" id="9_ju3dn"]
+[ext_resource type="PackedScene" uid="uid://dqnajtewxqmoc" path="res://scenes/monk_firend.tscn" id="10_j13vg"]
+[ext_resource type="PackedScene" uid="uid://dh6l2ux5dykmn" path="res://scenes/player.tscn" id="11_3a8fg"]
+[ext_resource type="Texture2D" uid="uid://cmrsm6jbgnehf" path="res://assets/GandalfHardcore FREE Platformer Assets/birds1.png" id="12_tm14p"]
+[ext_resource type="Texture2D" uid="uid://cs34nasrt2hws" path="res://assets/GandalfHardcore FREE Platformer Assets/birds4.png" id="13_jpiy6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3amsk"]
+texture = ExtResource("3_1rxmq")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pkidm"]
+texture = ExtResource("4_6b7v6")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8yrgh"]
+texture = ExtResource("5_msjty")
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vk2oj"]
+texture = ExtResource("6_1wbyy")
+0:0/size_in_atlas = Vector2i(14, 12)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fg1jx"]
+texture = ExtResource("7_32mrs")
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_msjty"]
+texture = ExtResource("8_6b7v6")
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2a7qk"]
+sources/0 = SubResource("TileSetAtlasSource_3amsk")
+sources/1 = SubResource("TileSetAtlasSource_pkidm")
+sources/2 = SubResource("TileSetAtlasSource_8yrgh")
+sources/3 = SubResource("TileSetAtlasSource_vk2oj")
+sources/4 = SubResource("TileSetAtlasSource_fg1jx")
+sources/5 = SubResource("TileSetAtlasSource_msjty")
+
+[node name="Final" type="Node2D"]
+script = ExtResource("1_msjty")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(42, 48)
+texture = ExtResource("1_qkvop")
+
+[node name="End" type="Label" parent="."]
+z_index = 1
+offset_left = -641.0
+offset_top = 4.0
+offset_right = 749.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 0.3882353, 0.5529412, 1)
+theme_override_fonts/font = ExtResource("2_op64y")
+theme_override_font_sizes/font_size = 8
+text = "The end is only the beginning. 
+Your choice echoes through what remains.
+The world waits for what comes next ..."
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(42.999996, 48.999996)
+scale = Vector2(0.7, 0.7)
+zoom = Vector2(2.5, 2.5)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_2a7qk")
+format = 2
+layer_0/z_index = 1
+layer_0/tile_data = PackedInt32Array(589818, 1, 0, 589819, 1, 0, 589820, 1, 0, 589821, 1, 0, 589822, 1, 0, 589823, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 458745, 2, 2, 524281, 2, 3, 393210, 65538, 1, 458746, 65538, 2, 524282, 65538, 3, 393211, 131074, 1, 458747, 131074, 2, 524283, 131074, 3, 458748, 196610, 2, 524284, 196610, 3, 393225, 2, 2, 458761, 2, 3, 327690, 65538, 1, 393226, 65538, 2, 458762, 65538, 3, 327691, 131074, 1, 393227, 131074, 2, 458763, 131074, 3, 393228, 196610, 2, 458764, 196610, 3, -196597, 4, 0, 131088, 5, 0, 393204, 5, 268435456)
+layer_1/name = "Back"
+layer_1/tile_data = PackedInt32Array(131074, 3, 0)
+
+[node name="AngryVillager" parent="." instance=ExtResource("8_po02c")]
+position = Vector2(-25, 103)
+
+[node name="FinalBoss" parent="." instance=ExtResource("9_ju3dn")]
+position = Vector2(31, 96)
+
+[node name="MonkFirend" parent="." instance=ExtResource("10_j13vg")]
+position = Vector2(84, 110)
+
+[node name="Player" parent="." instance=ExtResource("11_3a8fg")]
+position = Vector2(126, 120)
+
+[node name="Birds1" type="Sprite2D" parent="."]
+position = Vector2(-106, 56.5)
+scale = Vector2(1.6, 1.45)
+texture = ExtResource("12_tm14p")
+
+[node name="Birds4" type="Sprite2D" parent="."]
+position = Vector2(215.25, -16.25)
+scale = Vector2(2.8333333, 2.5)
+texture = ExtResource("13_jpiy6")

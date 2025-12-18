@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
-@onready var animated_sprite = %AnimatedSprite2DPlayer
+@onready var animated_sprite = $AnimatedSprite2DPlayer
 
 var is_frozen: bool = false
 var is_attacking: bool = false 
@@ -18,9 +18,7 @@ func _ready():
 	GameState.show_final_scene.connect(_on_final_redirect)
 
 func _on_final_redirect():
-	get_tree().change_scene("res://final.tscn")
-	await get_tree().create_timer(10, true).timeout
-	get_tree().change_scene("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/final.tscn")
 
 func _on_full_attack():
 	is_attacking = true
