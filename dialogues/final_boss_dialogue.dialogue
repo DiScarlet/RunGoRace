@@ -1,0 +1,82 @@
+~ crescent_start
+Crescent Captain: …
+Crescent Captain: So the armor still walks.
+Crescent Captain: I wondered how long it would take before it reached the Gate.
+Crescent Captain: Or should I say—
+Crescent Captain: Commander of the Broken Path.
+Crescent Captain: You wore that title once.
+Crescent Captain: You left without finishing what you began.
+Crescent Captain: And yet… here you are.
+Crescent Captain: The monsters obey you now, don’t they?
+Crescent Captain: You could end this war.
+Crescent Captain: Or rule it.
+Crescent Captain: Or abandon it, like before.
+
+Crescent Captain: Choose.
+
+- 🔴 Destroy the Order => crescent_destroy
+- 🔵 Take Control => crescent_control
+- ⚫ Walk Away => crescent_walk_away
+
+
+~ crescent_destroy
+Player: This ends now.
+Crescent Captain: I was afraid you’d say that.
+Crescent Captain: Hope is a dangerous thing, Commander.
+Crescent Captain: It makes people reckless.
+
+do GameState.request_attack.emit()
+do GameState.crescent_captain_attack.emit()
+
+Crescent Captain: [wait=2] If you strike me down—
+Crescent Captain: —the chains will shatter.
+Crescent Captain: The beasts will run free.
+Crescent Captain: And so will the people.
+
+Crescent Captain: [wait=2] Let’s see if the world survives your mercy.
+
+=> END
+
+~ crescent_control
+Player: Step aside.
+Player: This Order will stand — but not under you.
+
+Crescent Captain: …
+Crescent Captain: So the throne finally speaks.
+Crescent Captain: You always understood what the world needs.
+Crescent Captain: Fear.
+Crescent Captain: Structure.
+Crescent Captain: Silence.
+
+do GameState.crescent_captain_die.emit()
+
+Crescent Captain: [wait=2] Just remember…
+Crescent Captain: Orders don’t corrupt people.
+Crescent Captain: They reveal them.
+
+Crescent Captain: The Crescent bows.
+
+=> END
+
+
+~ crescent_walk_away
+Player: I’m done choosing sides.
+
+Crescent Captain: …
+Crescent Captain: Then why keep the armor?
+Crescent Captain: It only listens to those who intend to rule.
+
+Player: That’s why I’m leaving it.
+
+do GameState.drop_armor.emit()
+
+Crescent Captain: You’d walk away from power?
+Crescent Captain: From fear itself?
+
+Player: Yes.
+
+Crescent Captain: …
+Crescent Captain: Then go.
+Crescent Captain: The world will decide what follows.
+
+=> END

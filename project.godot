@@ -60,7 +60,7 @@ attack={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/dialogueVillager1.dialogue", "res://dialogues/dialogueMonk.dialogue", "res://dialogues/dialogueOrk.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/dialogueVillager1.dialogue", "res://dialogues/dialogueMonk.dialogue", "res://dialogues/dialogueOrk.dialogue", "res://dialogues/final_boss_dialogue.dialogue")
 
 [layer_names]
 
