@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dan8bjelokbq4"]
+
+[ext_resource type="Texture2D" uid="uid://bt53tyw58jmp3" path="res://assets/GandalfHardcore FREE Platformer Assets/Other Tiles1.png" id="2_q1hou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37l63"]
+size = Vector2(32, 6.5)
+
+[node name="WoodenPlatform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q1hou")
+region_enabled = true
+region_rect = Rect2(64, 208, 32, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_37l63")

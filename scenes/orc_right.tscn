@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpx5t0scq6w2c"]
+
+[ext_resource type="Texture2D" uid="uid://bbrc1rmwe80xf" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc.png" id="1_t13x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ppp"]
+size = Vector2(22, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krho6"]
+atlas = ExtResource("1_t13x2")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh6dx"]
+atlas = ExtResource("1_t13x2")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v661n"]
+atlas = ExtResource("1_t13x2")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saonf"]
+atlas = ExtResource("1_t13x2")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53lvs"]
+atlas = ExtResource("1_t13x2")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0b7r"]
+atlas = ExtResource("1_t13x2")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_juyok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krho6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh6dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v661n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saonf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53lvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0b7r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Orc_Right" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_33ppp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_juyok")
+frame_progress = 0.25708482

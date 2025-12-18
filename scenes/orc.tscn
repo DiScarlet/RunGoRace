@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://iam4kx3xx37"]
+
+[ext_resource type="Texture2D" uid="uid://cjyk7b88t8k8g" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc with shadows/Orc.png" id="1_2byfh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfp0d"]
+atlas = ExtResource("1_2byfh")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu8b3"]
+atlas = ExtResource("1_2byfh")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5mlm"]
+atlas = ExtResource("1_2byfh")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvs4g"]
+atlas = ExtResource("1_2byfh")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xme4o"]
+atlas = ExtResource("1_2byfh")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duj3f"]
+atlas = ExtResource("1_2byfh")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48uv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfp0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu8b3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5mlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvs4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xme4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duj3f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ppp"]
+size = Vector2(22, 16)
+
+[node name="Orc" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_48uv6")
+autoplay = "default"
+frame_progress = 0.8211193
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_33ppp")
