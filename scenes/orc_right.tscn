@@ -1,9 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpx5t0scq6w2c"]
+[gd_scene load_steps=9 format=3 uid="uid://cpx5t0scq6w2c"]
 
 [ext_resource type="Texture2D" uid="uid://bbrc1rmwe80xf" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Orc/Orc/Orc.png" id="1_t13x2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_33ppp"]
-size = Vector2(22, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_krho6"]
 atlas = ExtResource("1_t13x2")
@@ -57,10 +54,7 @@ animations = [{
 
 [node name="Orc_Right" type="CharacterBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, -1)
-shape = SubResource("RectangleShape2D_33ppp")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_juyok")
+autoplay = "default"
 frame_progress = 0.25708482

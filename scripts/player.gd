@@ -9,12 +9,20 @@ var is_frozen: bool = false
 var is_attacking: bool = false 
 
 func _ready():
-	# Only listen for Dialogue Manager to freeze/unfreeze player
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	GameState.player_attack_villager.connect(_on_attack_command_received)
 	GameState.request_attack.connect(_on_got_attacked_command_received)
+	GameState.player_die.connect(_on_die)
 	
+func _on_die():
+	print("DEAD")
+	Engine.time_scale = 0.5
+	$CollisionShape2D.queue_free()
+	await get_tree().create_timer(1.5, true).timeout
+	Engine.time_scale = 1.0
+	get_tree().reload_current_scene()
+
 func _on_got_attacked_command_received():
 	print("was hurt")
 	animated_sprite.play("hurt")
@@ -31,6 +39,7 @@ func _on_attack_command_received():
 	# 4. Allow idle animations again
 	is_attacking = false
 	animated_sprite.play("default")
+	GameState.player_finished_attack.emit()
 	
 func _on_dialogue_started(_resource: DialogueResource):
 	is_frozen = true

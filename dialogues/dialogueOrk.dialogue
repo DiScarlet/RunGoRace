@@ -1,11 +1,56 @@
-~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ ork_start
+do GameState.ork_start_attack.emit()
+Ork (snarling): Grakh’tul… ur-nak! Zor bash krumak!
+*The ork raises its weapon and steps closer.*
+
+- [Attack] => ork_attack
+- Try to calm him => ork_negotiate
+
+~ ork_attack
+do GameState.player_attack_villager.emit()
+[wait=0.05]
+do GameState.request_attack.emit()
+do GameState.ork_attack.emit()
+Ork (roaring): [wait:3] RAAAAGH! KRUM-TAK!!!
+- [Continue Attack] => ork_continue_attack
+- Try to calm him => ork_negotiate
+
+~ ork_continue_attack
+do GameState.player_attack_villager.emit()
+[wait=0.05]
+do GameState.request_attack.emit()
+do GameState.ork_attack.emit()
+Ork (roaring): MUUAAAAAAH! KRUM-NATAK!!!
+do GameState.player_die.emit()
+=> END
+
+
+~ ork_negotiate
+You: Easy… I don’t want to fight.
+
+Ork (confused, growling): Hrr… nak? Zor-tha…?
+*The ork hesitates, sniffing the air.*
+
+- Lower your weapon => ork_negotiate_continue
+- Stay silent => ork_negotiate_continue
+
+
+~ ork_negotiate_continue
+Ork (gruff, slower): …Grakh… no bash?
+*He lowers his weapon slightly.*
+
+Ork: Ur-nak cres… black steel… bad omen.
+*He points at your armor and spits on the ground.*
+
+- Nod slowly => ork_warning
+- Speak calmly => ork_warning
+
+
+~ ork_warning
+do GameState.ork_back_default.emit()
+Ork (serious): Krum-world sick. Black moon eat souls.
+Ork (angry whisper): You walk death-road.
+
+*The ork steps aside, letting you pass.*
+
 => END
