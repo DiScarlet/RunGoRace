@@ -7,7 +7,7 @@ Crescent Captain: Commander of the Broken Path.
 Crescent Captain: You wore that title once.
 Crescent Captain: You left without finishing what you began.
 Crescent Captain: And yet… here you are.
-Crescent Captain: The monsters obey you now, don’t they?
+Crescent Captain: The monsters don't attack you now, don’t they?
 Crescent Captain: You could end this war.
 Crescent Captain: Or rule it.
 Crescent Captain: Or abandon it, like before.
@@ -25,8 +25,19 @@ Crescent Captain: I was afraid you’d say that.
 Crescent Captain: Hope is a dangerous thing, Commander.
 Crescent Captain: It makes people reckless.
 
-do GameState.request_attack.emit()
+do GameState.full_attack.emit()
+[wait=0.1]
 do GameState.crescent_captain_attack.emit()
+[wait=0.1]
+- [Attack]
+do GameState.full_attack.emit()
+[wait=0.1]
+do GameState.crescent_captain_attack.emit()  
+[wait=0.1]
+- [Attack]
+do GameState.full_attack.emit()
+[wait=0.1]
+do GameState.crescent_captain_die.emit()  
 
 Crescent Captain: [wait=2] If you strike me down—
 Crescent Captain: —the chains will shatter.
@@ -34,6 +45,8 @@ Crescent Captain: The beasts will run free.
 Crescent Captain: And so will the people.
 
 Crescent Captain: [wait=2] Let’s see if the world survives your mercy.
+[wait=0.1]
+do GameState.show_final_scene.emit()  
 
 => END
 
@@ -68,8 +81,6 @@ Crescent Captain: It only listens to those who intend to rule.
 
 Player: That’s why I’m leaving it.
 
-do GameState.drop_armor.emit()
-
 Crescent Captain: You’d walk away from power?
 Crescent Captain: From fear itself?
 
@@ -78,5 +89,7 @@ Player: Yes.
 Crescent Captain: …
 Crescent Captain: Then go.
 Crescent Captain: The world will decide what follows.
+
+do GameState.drop_armor.emit()
 
 => END

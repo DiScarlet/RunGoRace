@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_sprite = %AnimatedSprite2DPlayer
 
 var is_frozen: bool = false
 var is_attacking: bool = false 
@@ -14,6 +14,25 @@ func _ready():
 	GameState.player_attack_villager.connect(_on_attack_command_received)
 	GameState.request_attack.connect(_on_got_attacked_command_received)
 	GameState.player_die.connect(_on_die)
+	GameState.full_attack.connect(_on_full_attack)
+	GameState.show_final_scene.connect(_on_final_redirect)
+
+func _on_final_redirect():
+	get_tree().change_scene("res://final.tscn")
+	await get_tree().create_timer(10, true).timeout
+	get_tree().change_scene("res://scenes/game.tscn")
+
+func _on_full_attack():
+	is_attacking = true
+	animated_sprite.play("attack1")
+	await animated_sprite.animation_finished
+	animated_sprite.play("attack2")
+	await animated_sprite.animation_finished
+	animated_sprite.play("attack3")
+	await animated_sprite.animation_finished
+	is_attacking = false
+	animated_sprite.play("default")
+	GameState.player_finished_attack.emit()
 	
 func _on_die():
 	print("DEAD")

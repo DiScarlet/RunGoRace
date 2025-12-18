@@ -214,7 +214,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hax0n")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2",
 "speed": 9.0
 }, {
@@ -237,7 +237,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fdfoy")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3",
 "speed": 9.0
 }, {
@@ -342,13 +342,11 @@ z_index = 5
 collision_layer = 2
 script = ExtResource("1_g2els")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2DPlayer" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"hurt"
+animation = &"attack3"
 autoplay = "default"
-frame = 2
-frame_progress = 0.81728214
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -9.5)

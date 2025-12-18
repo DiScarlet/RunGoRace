@@ -7,3 +7,7 @@ signal ork_attack
 signal player_die
 signal player_finished_attack
 signal ork_back_default
+signal full_attack
+signal crescent_captain_attack
+signal crescent_captain_die
+signal show_final_scene
