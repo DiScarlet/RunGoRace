@@ -1,36 +1,39 @@
 [gd_scene load_steps=12 format=3 uid="uid://6yim8jgt1fkl"]
 
 [ext_resource type="Texture2D" uid="uid://bkgsyf20rsgs4" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-SheetBlack.png" id="1_55bk2"]
-[ext_resource type="Script" uid="uid://cciq4qtbvt18s" path="res://scripts/slime.gd" id="1_jbwm7"]
+[ext_resource type="Script" uid="uid://cfj0w05dqfalo" path="res://scripts/kabanchyk.gd" id="1_jbwm7"]
 [ext_resource type="PackedScene" uid="uid://pkoya08bafo6" path="res://scenes/killzone.tscn" id="2_jbwm7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f3pyo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbwm7"]
 atlas = ExtResource("1_55bk2")
 region = Rect2(0, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_frsc5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3pyo"]
 atlas = ExtResource("1_55bk2")
 region = Rect2(48, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7h4fe"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_frsc5"]
 atlas = ExtResource("1_55bk2")
 region = Rect2(96, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g1vef"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h4fe"]
 atlas = ExtResource("1_55bk2")
 region = Rect2(144, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1x7kr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1vef"]
 atlas = ExtResource("1_55bk2")
 region = Rect2(192, 0, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eo317"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x7kr"]
 atlas = ExtResource("1_55bk2")
 region = Rect2(240, 0, 48, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_uuil2"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_eo317"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbwm7")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f3pyo")
 }, {
@@ -45,34 +48,33 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1x7kr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eo317")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tgh0"]
-size = Vector2(27, 27)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbwm7"]
+size = Vector2(29, 26)
 
 [node name="Kabanchyk" type="Node2D"]
 script = ExtResource("1_jbwm7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_uuil2")
+sprite_frames = SubResource("SpriteFrames_eo317")
 autoplay = "default"
-frame_progress = 0.13252154
-
-[node name="RayCastRight" type="RayCast2D" parent="."]
-target_position = Vector2(19, 0)
+frame_progress = 0.3080906
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-21, 0)
+position = Vector2(0, 8)
+target_position = Vector2(-16, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 8)
+target_position = Vector2(13, 0)
 
 [node name="Killzone" parent="." instance=ExtResource("2_jbwm7")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0.5, 2.5)
-shape = SubResource("RectangleShape2D_3tgh0")
+position = Vector2(-1.5, 3)
+shape = SubResource("RectangleShape2D_jbwm7")

@@ -1,21 +1,21 @@
 extends Node2D
 
 const SPEED = 60
-var direction = 1
+var direction = -1
 
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_sprite_k: AnimatedSprite2D = $AnimatedSprite2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if ray_cast_left.is_colliding():
-		print("sl Collided left")
+		print("cab Collided left")
 		direction = 1
-		animated_sprite.flip_h = false
+		animated_sprite_k.flip_h = true
 	if ray_cast_right.is_colliding():
-		print("sl Collided right")
+		print("cab Collided right")
 		direction = -1
-		animated_sprite.flip_h = true
+		animated_sprite_k.flip_h = false
 		
 	position.x += SPEED * delta * direction
