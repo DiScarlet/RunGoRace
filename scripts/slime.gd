@@ -10,11 +10,9 @@ var direction = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if ray_cast_left.is_colliding():
-		print("sl Collided left")
 		direction = 1
 		animated_sprite.flip_h = false
 	if ray_cast_right.is_colliding():
-		print("sl Collided right")
 		direction = -1
 		animated_sprite.flip_h = true
 		

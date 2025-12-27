@@ -1,0 +1,46 @@
+~ sky_meeting
+Mother: …
+Mother: You’re drifting again.
+Mother: Just like you used to.
+
+Player: Am I dreaming?
+
+Mother: Does it matter?
+Mother: You always came to me like this.
+Mother: When the ground felt too heavy.
+
+Mother: Look down.
+Mother: See how small everything is from here.
+
+Player: I tried to stay.
+Player: I really did. 
+
+Mother: I know.
+Mother: That’s why you’re still standing.
+
+Player: Why now?
+Player: Why here?
+
+Mother: Because this is where you listen.
+Mother: And because I can only meet you when you stop running.
+
+Mother: You don’t need to hold the weight alone anymore.
+
+- Reach for her
+	Mother: …
+	Mother: You were never alone.
+	Mother: Even when you thought you were.
+- Stay silent
+	Mother: It’s alright.
+	Mother: Silence was always your answer.
+
+Mother: When you wake up—
+Mother: you’ll forget the sky.
+Mother: But not how it felt.
+
+Mother: That feeling will guide you.
+Mother: Let it.
+
+do GameState.mother1_end.emit()
+
+=> END

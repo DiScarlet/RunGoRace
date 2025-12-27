@@ -16,6 +16,14 @@ func _ready():
 	GameState.player_die.connect(_on_die)
 	GameState.full_attack.connect(_on_full_attack)
 	GameState.show_final_scene.connect(_on_final_redirect)
+	GameState.restore_position.connect(restore_position)
+	
+func restore_position():
+	print("RESOTRED")
+
+	var player = get_tree().current_scene.get_node("Player")
+	if player:
+		player.global_position = Vector2(6250, -51)
 
 func _on_final_redirect():
 	get_tree().change_scene_to_file("res://scenes/final.tscn")

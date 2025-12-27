@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Music="*res://scenes/music.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameState="*res://scripts/singletons/GameState.gd"
+TransitionScreen="*res://scenes/transition_screen.tscn"
+NavigateToMother1="*res://scripts/singletons/navigate_to_mother_1.gd"
 
 [dialogue_manager]
 
@@ -60,7 +62,7 @@ attack={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/dialogueVillager1.dialogue", "res://dialogues/dialogueMonk.dialogue", "res://dialogues/dialogueOrk.dialogue", "res://dialogues/final_boss_dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/dialogueVillager1.dialogue", "res://dialogues/dialogueMonk.dialogue", "res://dialogues/dialogueOrk.dialogue", "res://dialogues/final_boss_dialogue.dialogue", "res://dialogues/mother_1.dialogue")
 
 [layer_names]
 

@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://noqi7p41adlg"]
+
+[ext_resource type="Texture2D" uid="uid://cs21ep0qoj0qi" path="res://assets/Warrior/Individual Sprite/idle/Warrior_Idle_1.png" id="1_06e74"]
+[ext_resource type="Texture2D" uid="uid://c53w5d4ooq1cw" path="res://assets/Warrior/Individual Sprite/idle/Warrior_Idle_2.png" id="2_thaw5"]
+[ext_resource type="Texture2D" uid="uid://d4k2txp6bevim" path="res://assets/Warrior/Individual Sprite/idle/Warrior_Idle_3.png" id="3_yddag"]
+[ext_resource type="Texture2D" uid="uid://deqgeq6v6aomy" path="res://assets/Warrior/Individual Sprite/idle/Warrior_Idle_4.png" id="4_nibya"]
+[ext_resource type="Texture2D" uid="uid://brmaujex1j0qd" path="res://assets/Warrior/Individual Sprite/idle/Warrior_Idle_5.png" id="5_nlo1k"]
+[ext_resource type="Texture2D" uid="uid://djw6bhhw2smih" path="res://assets/Warrior/Individual Sprite/idle/Warrior_Idle_6.png" id="6_xu8l2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_260et"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_06e74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_thaw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yddag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nibya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nlo1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xu8l2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Mother" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_260et")
+autoplay = "default"
+frame_progress = 0.026390934

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvcgax0taxpcx"]
+
+[ext_resource type="Texture2D" uid="uid://d8mabv1cemfc" path="res://assets/Additional Assets/Skies/sk_p.png" id="1_hnjb0"]
+[ext_resource type="Script" uid="uid://h3ukjakw52uq" path="res://scenes/mother_meet.gd" id="1_svx6x"]
+[ext_resource type="PackedScene" uid="uid://noqi7p41adlg" path="res://scenes/mother.tscn" id="2_svx6x"]
+
+[node name="MotherMeet" type="Node2D"]
+script = ExtResource("1_svx6x")
+
+[node name="SkP" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = ExtResource("1_hnjb0")
+
+[node name="Mother" parent="." instance=ExtResource("2_svx6x")]
+z_index = 1
+position = Vector2(26, 35)
+scale = Vector2(1.5, 1.5)
+
+[node name="Camera2D" type="Camera2D" parent="Mother"]
+zoom = Vector2(2.6, 2.6)

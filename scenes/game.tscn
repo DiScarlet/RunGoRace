@@ -1813,7 +1813,7 @@ layer_5/z_index = 4
 layer_5/tile_data = PackedInt32Array(-261764, 655362, 19, -261929, 589826, 19, -196393, 589826, 20, -589606, 26, 0, -65526, 2, 19, 10, 2, 20)
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(4133, 211)
+position = Vector2(6205, -52)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -6)
@@ -1882,7 +1882,7 @@ position = Vector2(5775, 136)
 
 [node name="Coin15" parent="Coins" instance=ExtResource("4_lbhrr")]
 z_index = 3
-position = Vector2(6314, -64)
+position = Vector2(6489, -31)
 
 [node name="Coin16" parent="Coins" instance=ExtResource("4_lbhrr")]
 z_index = 3
@@ -2402,7 +2402,7 @@ position = Vector2(5682, 146)
 
 [node name="Orc" parent="NPCs" instance=ExtResource("41_oaba0")]
 z_index = 1
-position = Vector2(6275, -51)
+position = Vector2(6277, -52)
 
 [node name="Mobs" type="Node" parent="."]
 
@@ -2421,3 +2421,5 @@ position = Vector2(6350, -52)
 
 [node name="FinalBoss" parent="." instance=ExtResource("44_0sl42")]
 position = Vector2(7284, 67)
+
+[node name="Portals" type="Node" parent="."]
