@@ -11,14 +11,30 @@ signal full_attack
 signal crescent_captain_attack
 signal crescent_captain_die
 signal show_final_scene
-signal send_to_mother_1
-signal mother1_end
+
 signal restore_position
+signal start_mother(dialogueInd: int)
+signal dialogue_mother_1
+signal mother_end(dialogueInd: int)
 
 func _ready():
-	GameState.mother1_end.connect(_on_mother_finished)
+	GameState.start_mother.connect(_on_mother_start)
+	GameState.mother_end.connect(_on_mother_finished)
 
-func _on_mother_finished():
+func _on_mother_start(dialogueInd: int) -> void:
+	print("PASSED OUT, dialogue:", dialogueInd)
+
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_file("res://scenes/mother_meet.tscn")
+
+	# wait until the scene is fully loaded
+	await get_tree().scene_changed
+
+	if dialogueInd == 1:
+		GameState.dialogue_mother_1.emit()
+	
+func _on_mother_finished(dialogueInd: int):
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	
@@ -27,15 +43,20 @@ func _on_mother_finished():
 	# wait for scene to actually become active
 	await get_tree().scene_changed
 	
-	_restore_player_position()
+	_restore_player_position(dialogueInd)
 
-func _restore_player_position():
+func _restore_player_position(dialogueInd: int):
 	var scene = get_tree().current_scene
 	if scene == null:
 		push_error("Scene not loaded yet")
 		return
-
+		
+	var new_position
+	if(dialogueInd == 1):
+		new_position = Vector2(1127.0, 115.0)
+	elif (dialogueInd == 2):
+		new_position = Vector2(6316.0, -51)
 	var player = scene.get_node_or_null("Player")
 	if player:
 		print("RESTORED")
-		player.global_position = Vector2(6316.0, -51)
+		player.global_position = new_position

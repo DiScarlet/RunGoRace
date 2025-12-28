@@ -53,6 +53,4 @@ Ork (angry whisper): You walk death-road.
 
 *The ork steps aside, letting you pass.*
 
-do GameState.send_to_mother_1.emit()
-
 => END
