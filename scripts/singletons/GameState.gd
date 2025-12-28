@@ -15,6 +15,7 @@ signal show_final_scene
 signal restore_position
 signal start_mother(dialogueInd: int)
 signal dialogue_mother_1
+signal dialogue_mother_2
 signal mother_end(dialogueInd: int)
 
 func _ready():
@@ -33,6 +34,8 @@ func _on_mother_start(dialogueInd: int) -> void:
 
 	if dialogueInd == 1:
 		GameState.dialogue_mother_1.emit()
+	elif dialogueInd == 2:
+		GameState.dialogue_mother_2.emit()
 	
 func _on_mother_finished(dialogueInd: int):
 	TransitionScreen.transition()
@@ -55,7 +58,7 @@ func _restore_player_position(dialogueInd: int):
 	if(dialogueInd == 1):
 		new_position = Vector2(1127.0, 115.0)
 	elif (dialogueInd == 2):
-		new_position = Vector2(6316.0, -51)
+		new_position = Vector2(6382.0, -51)
 	var player = scene.get_node_or_null("Player")
 	if player:
 		print("RESTORED")

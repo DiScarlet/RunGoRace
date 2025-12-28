@@ -23,13 +23,13 @@ Monk (voice softening): I see it in your eyes. You’re not pretending. Somethin
 - …(silent) => act2_story
 
 ~ act2_story
-Monk (looking away, reflective): We used to talk about saving people. You wanted to stand at the front, shield raised, protecting everyone else. I chose prayer, you chose the sword… and somehow both of us failed. When the Crescent took you, it felt like I lost you long before I lost my family.
+Monk (looking away, reflective): We used to talk about saving people. You wanted to stand at the front, shield raised, protecting everyone else. I chose prayer, you chose the sword… and somehow both of us failed. Now you are standing in front of me, covered in blood. When the Crescent took you, it felt like I lost you long before I lost my family.
 - I don’t know how to answer that. => act2_emotional
 - …(silent) => act2_emotional
 - If there’s a way to make this right, I’ll try. => act2_emotional
 
 ~ act2_emotional
-Monk (a faint, tired smile): Some wounds don’t heal. They just teach us how to breathe with the pain. I'm not strong enough for revenge. I wanted to see if there was still a trace of the friend I once knew… before the world twisted us apart.
+Monk (a faint, tired smile): Some wounds don’t heal. They just teach us how to breathe with the pain. I'm not strong enough for revenge. I wanted to see if there was still a trace of the friend I once knew… before the world twisted us apart. That wound on your shoulder... I have nothing to help you, but don't die. Live to prove that you have changed, to atone for your sins.
 - I understand. => act2_farewell
 - Goodbye… my friend. => act2_farewell
 - …(silent) => act2_farewell

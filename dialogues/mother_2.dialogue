@@ -1,0 +1,71 @@
+~ mother_second_meeting_start
+(The path grows quiet. The air feels heavy.)
+
+Mother (soft, distant): …You’re bleeding.
+
+- I’ll be fine. => mother_2_response
+- …Mother? => mother_2_response
+- …(silent) => mother_2_response
+
+
+~ mother_2_response
+Mother (kneeling, though her feet never touch the ground): You always said that.
+Mother: Even when your hands shook.
+Mother: Even when you were afraid.
+
+- I don’t remember being afraid. => mother_memory
+- I don’t remember you. => mother_memory
+- I remember pain. => mother_memory
+
+
+~ mother_memory
+Mother (sad smile): Of course you don’t.
+Mother: Fear is the first thing the armor takes.
+Mother: Pain is what it leaves behind.
+
+Mother: Do you know why I never stopped you?
+
+- Why? => mother_reason
+- You should have stopped me. => mother_reason
+- …(silent) => mother_reason
+
+
+~ mother_reason
+Mother (quietly): Because you were kind.
+Mother: And kind children believe strength can protect everyone.
+Mother: Even when it destroys them.
+
+Mother (looking at the armor): That weight… it wasn’t meant for a heart like yours.
+
+- Then why am I still wearing it? => mother_choice
+- I don’t know who I am without it. => mother_choice
+- …(silent) => mother_choice
+
+
+~ mother_choice
+Mother (voice trembling, but firm): That is what frightens me.
+Mother: Not the battles.
+Mother: Not the Order.
+Mother: But that you might forget how to live without being needed.
+
+Mother (stepping back): Whatever waits ahead…
+Mother: Promise me one thing.
+
+- What? => mother_promise
+- I can’t promise anything. => mother_promise
+- …(silent) => mother_promise
+
+
+~ mother_promise
+Mother (gentle, fading): Don’t disappear again.
+Mother: Not into armor.
+Mother: Not into duty.
+Mother: Not into silence.
+
+Mother: If you must fall…
+Mother: Fall as yourself.
+
+(The presence fades. The path forward opens.)
+
+do GameState.mother_end.emit(2)
+=> END
