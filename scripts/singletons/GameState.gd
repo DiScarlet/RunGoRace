@@ -18,15 +18,20 @@ signal dialogue_mother_1
 signal dialogue_mother_2
 signal mother_end(dialogueInd: int)
 
+signal change_night
+
 func _ready():
 	GameState.start_mother.connect(_on_mother_start)
 	GameState.mother_end.connect(_on_mother_finished)
 
+func _on_transition_start():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	
 func _on_mother_start(dialogueInd: int) -> void:
 	print("PASSED OUT, dialogue:", dialogueInd)
 
-	TransitionScreen.transition()
-	await TransitionScreen.on_transition_finished
+	_on_transition_start()
 	get_tree().change_scene_to_file("res://scenes/mother_meet.tscn")
 
 	# wait until the scene is fully loaded
@@ -38,8 +43,7 @@ func _on_mother_start(dialogueInd: int) -> void:
 		GameState.dialogue_mother_2.emit()
 	
 func _on_mother_finished(dialogueInd: int):
-	TransitionScreen.transition()
-	await TransitionScreen.on_transition_finished
+	_on_transition_start()
 	
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	

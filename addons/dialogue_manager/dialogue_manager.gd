@@ -749,6 +749,9 @@ func _mutate(mutation: Dictionary, extra_game_states: Array, is_inline_mutation:
 		match expression[0].function:
 			&"wait", &"Wait":
 				mutated.emit(mutation.merged({ is_inline = is_inline_mutation }))
+
+
+
 				if [TYPE_FLOAT, TYPE_INT].has(typeof(args[0])):
 					await Engine.get_main_loop().create_timer(float(args[0])).timeout
 				else:

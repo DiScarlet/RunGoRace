@@ -1,5 +1,6 @@
-[gd_scene load_steps=50 format=3 uid="uid://m4sgda1aujhu"]
+[gd_scene load_steps=55 format=3 uid="uid://m4sgda1aujhu"]
 
+[ext_resource type="Script" uid="uid://ddgc5ydlmjgge" path="res://scripts/tavern.gd" id="1_0k6b0"]
 [ext_resource type="Texture2D" uid="uid://b0yc0ocqeo43i" path="res://assets/GandalfHardcore FREE Platformer Assets/Tree1.png" id="1_a1n56"]
 [ext_resource type="Texture2D" uid="uid://buktnxgrijnmq" path="res://assets/GandalfHardcore FREE Platformer Assets/pixel Art Bonsai.png" id="2_o4u3a"]
 [ext_resource type="Texture2D" uid="uid://cfylmaa5bg6du" path="res://assets/House/PNG/walls_floor.png" id="3_0oyxf"]
@@ -23,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://qieeyta1eeak" path="res://scenes/healer.tscn" id="21_q3x83"]
 [ext_resource type="Texture2D" uid="uid://c08qv72gskj7a" path="res://assets/Additional Assets/Skies/sk_w.png" id="22_s2vse"]
 [ext_resource type="PackedScene" uid="uid://pkoya08bafo6" path="res://scenes/killzone.tscn" id="23_4ngsn"]
+[ext_resource type="Texture2D" uid="uid://do2whwf5jdhfn" path="res://assets/Final/Background_0.png" id="24_0qudn"]
 [ext_resource type="PackedScene" uid="uid://c1ajont6u0buo" path="res://scenes/move_portal.tscn" id="24_g3d30"]
 [ext_resource type="PackedScene" uid="uid://ch4h35jn7kbxf" path="res://scenes/platform.tscn" id="25_x0yvj"]
 [ext_resource type="PackedScene" uid="uid://dh6l2ux5dykmn" path="res://scenes/player.tscn" id="26_8y0nh"]
@@ -966,9 +968,85 @@ sources/22 = SubResource("TileSetAtlasSource_diw3x")
 sources/23 = SubResource("TileSetAtlasSource_q3unb")
 sources/24 = SubResource("TileSetAtlasSource_gjunt")
 
+[sub_resource type="Animation" id="Animation_v6o46"]
+resource_name = "night"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.02, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_sdyde"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ndtt"]
+_data = {
+&"RESET": SubResource("Animation_sdyde"),
+&"night": SubResource("Animation_v6o46")
+}
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gbbts"]
 normal = Vector2(-0.0059522754, -0.9999823)
 distance = -1.0178391
+
+[sub_resource type="Animation" id="Animation_3i17g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-145, -45)]
+}
 
 [sub_resource type="Animation" id="Animation_yq3p1"]
 resource_name = "move"
@@ -987,21 +1065,6 @@ tracks/0/keys = {
 "values": [Vector2(-170, 8), Vector2(-145, -45)]
 }
 
-[sub_resource type="Animation" id="Animation_3i17g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-145, -45)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u4jmd"]
 _data = {
 &"RESET": SubResource("Animation_3i17g"),
@@ -1009,6 +1072,7 @@ _data = {
 }
 
 [node name="Tavern" type="Node2D"]
+script = ExtResource("1_0k6b0")
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 1
@@ -1075,8 +1139,19 @@ color = Color(0.8235294, 0.99607843, 0.9764706, 1)
 offset_left = -644.0
 offset_top = 154.0
 offset_right = 1087.0
-offset_bottom = 448.0
+offset_bottom = 659.0
 color = Color(0.6862745, 0.74509805, 0.73333335, 1)
+
+[node name="Night" type="Sprite2D" parent="Background"]
+visible = false
+position = Vector2(726, 64.999985)
+scale = Vector2(0.89843756, 0.8653846)
+texture = ExtResource("24_0qudn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background/Night"]
+libraries = {
+&"": SubResource("AnimationLibrary_8ndtt")
+}
 
 [node name="Killzone" parent="." instance=ExtResource("23_4ngsn")]
 position = Vector2(-104, 90)
@@ -1102,7 +1177,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Player" parent="." instance=ExtResource("26_8y0nh")]
-position = Vector2(673, 24)
+position = Vector2(665, 22)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -28)

@@ -2202,7 +2202,7 @@ offset_bottom = 43.0
 theme_override_colors/font_color = Color(1, 0.6901961, 0.6, 1)
 theme_override_fonts/font = ExtResource("7_u5sy4")
 theme_override_font_sizes/font_size = 8
-text = "Shall I enter?"
+text = "Is it the portal to the healer's house?"
 horizontal_alignment = 1
 
 [node name="BackGround" type="Node" parent="."]
@@ -2487,6 +2487,6 @@ scale = Vector2(2, 2)
 
 [node name="Transportation" type="Node" parent="Portals"]
 
-[node name="MovePortal" parent="Portals/Transportation" instance=ExtResource("46_458eo")]
+[node name="tavern" parent="Portals/Transportation" instance=ExtResource("46_458eo")]
 position = Vector2(6865.0005, 74)
 scale = Vector2(1.5, 1.5)
