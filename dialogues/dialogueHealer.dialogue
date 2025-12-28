@@ -1,75 +1,11 @@
 Old Samurai
 ~ samurai_start
 Old Samurai (without turning, calm): You walk like someone who has forgotten how to fear pain.
-- Are you the healer? => samurai_observe
-- I was told you could help me. => samurai_observe
-- …(silent) => samurai_observe
 
-~ samurai_observe
-Old Samurai (turns slowly, eyes sharp): Help is never simple. Sit. Let me look at that wound.
-- I don’t trust healers. => samurai_trust
-- Do what you must. => samurai_trust
-- …(silent) => samurai_trust
 
-~ samurai_trust
-Old Samurai (examining the armor): This steel… I know it. Black Crescent craftsmanship. Efficient. Cruel.
-- I didn’t choose this armor. => samurai_memory
-- It was given to me. => samurai_memory
-
-~ samurai_memory
-Old Samurai (snorts quietly): Armor is never “given.” It is worn willingly… or after something is taken from you.
-(pause)
-You don’t remember, do you?
-- No. => samurai_reveal
-- I remember fragments. Blood. Orders. => samurai_reveal
-
-~ samurai_reveal
-Old Samurai (nods slowly): Then you are more dangerous than you know. A blade without memory still cuts true.
-- Will you heal me? => samurai_choice
-- Why do you help someone like me? => samurai_choice
-
-~ samurai_choice
-Old Samurai (turns away, preparing herbs): I do not heal soldiers. I heal consequences.
-The Crescent left scars on this land… and on you.
-- You sound like you know them well. => samurai_past
-- I don’t want to be their weapon anymore. => samurai_past
-
-~ samurai_past
-Old Samurai (voice low): Once, they came to my village. Asked for obedience. Took children to “train.”
-I refused. They burned everything but this place.
-- Why didn’t they kill you? => samurai_reason
-- I’m sorry. => samurai_reason
-
-~ samurai_reason
-Old Samurai (meets your eyes): Because I killed their captain.
-Since then, I heal those they break… and wait.
-- Wait for what? => samurai_truth
-- For revenge? => samurai_truth
-
-~ samurai_truth
-Old Samurai (quiet, steady): For the moment when their strongest knight forgets who he was…
-and must decide who he will become.
-- Are you talking about me? => samurai_decision
-
-~ samurai_decision
-Old Samurai (placing a hand on your shoulder): The wound will close. The pain will fade.
-But memory… memory returns only when you are ready to face it.
-- Then heal me. => samurai_heal
-- I’m afraid of what I’ll remember. => samurai_heal
-
-~ samurai_heal
-Old Samurai (beginning the ritual): Fear is good. It means you are still human.
-(pause)
-When the Crescent comes for you again… remember this:
-You were not born a monster.
-- I’ll remember. => samurai_end
-- …(silent) => samurai_end
-
-~ samurai_end
-Old Samurai: Rest here tonight. At dawn, the road will open.
-
-- Rest
+- Rest 
 do GameState.change_night.emit()
 
-Old Samurai: I did everything I could. Now it is up to you. What you choose to do with your sword… is no longer their decision.
+Old Samurai: [wait=10] I did everything I could. 
+Now it is up to you. What you choose to do with your sword… is no longer their decision.
 => END
