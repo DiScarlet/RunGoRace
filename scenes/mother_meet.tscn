@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvcgax0taxpcx"]
 
 [ext_resource type="Texture2D" uid="uid://d8mabv1cemfc" path="res://assets/Additional Assets/Skies/sk_p.png" id="1_hnjb0"]
-[ext_resource type="Script" uid="uid://h3ukjakw52uq" path="res://scenes/mother_meet.gd" id="1_svx6x"]
+[ext_resource type="Script" uid="uid://h3ukjakw52uq" path="res://scripts/mother_meet.gd" id="1_svx6x"]
 [ext_resource type="PackedScene" uid="uid://noqi7p41adlg" path="res://scenes/mother.tscn" id="2_svx6x"]
 
 [node name="MotherMeet" type="Node2D"]
