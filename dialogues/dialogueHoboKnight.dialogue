@@ -79,6 +79,8 @@ do GameState.full_attack.emit()
 do GameState.defector_hurt.emit()
 do GameState.defector_hurt.emit()
 
+do GameState.defector_idle.emit()
+
 Defector (collapsing): You still don’t understand…
 Defector: The Crescent isn’t a place.
 Defector: It’s a *promise*.

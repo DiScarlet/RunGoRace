@@ -22,6 +22,7 @@ signal change_night
 
 signal defector_attack
 signal defector_hurt
+signal defector_idle
 
 func _ready():
 	GameState.start_mother.connect(_on_mother_start)

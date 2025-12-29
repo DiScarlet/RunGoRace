@@ -1,9 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://86rps5nk5ta1"]
+[gd_scene load_steps=49 format=3 uid="uid://86rps5nk5ta1"]
 
 [ext_resource type="Texture2D" uid="uid://d4dyk8ck7q2av" path="res://assets/Hobo Knight/Spritesheets/hooded knight idle.png" id="1_biyl7"]
 [ext_resource type="Script" uid="uid://bp3g82gl0qia" path="res://scripts/hobo_knight.gd" id="1_lh8ky"]
 [ext_resource type="Texture2D" uid="uid://dpomlaqndptql" path="res://assets/Hobo Knight/Spritesheets/hooded knight attack.png" id="2_tq1s8"]
 [ext_resource type="Texture2D" uid="uid://cv0y468rhod3i" path="res://assets/Hobo Knight/Spritesheets/Hure.png" id="4_ennfq"]
+[ext_resource type="Texture2D" uid="uid://qn2chuk1eg33" path="res://assets/Hobo Knight/Spritesheets/idle_kn.png" id="5_a5u58"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sigif"]
 atlas = ExtResource("2_tq1s8")
@@ -137,6 +138,38 @@ region = Rect2(600, 0, 100, 100)
 atlas = ExtResource("4_ennfq")
 region = Rect2(700, 0, 100, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp7mx"]
+atlas = ExtResource("5_a5u58")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp6mb"]
+atlas = ExtResource("5_a5u58")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egtb6"]
+atlas = ExtResource("5_a5u58")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lucgf"]
+atlas = ExtResource("5_a5u58")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3dgj"]
+atlas = ExtResource("5_a5u58")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vr8b"]
+atlas = ExtResource("5_a5u58")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yohdq"]
+atlas = ExtResource("5_a5u58")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt0r4"]
+atlas = ExtResource("5_a5u58")
+region = Rect2(700, 0, 100, 100)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_sigif"]
 animations = [{
 "frames": [{
@@ -252,6 +285,35 @@ animations = [{
 "loop": false,
 "name": &"hurt",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp7mx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp6mb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egtb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lucgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3dgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vr8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yohdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt0r4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcpk1"]
@@ -262,12 +324,13 @@ script = ExtResource("1_lh8ky")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sigif")
-animation = &"attack"
+animation = &"idle"
 autoplay = "default"
+frame_progress = 0.31771797
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(28, 1)
+position = Vector2(23, 1)
 shape = SubResource("RectangleShape2D_vcpk1")

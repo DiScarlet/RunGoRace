@@ -7,6 +7,7 @@ func _ready() -> void:
 	$Area2D.body_entered.connect(_on_player_entered)
 	GameState.defector_attack.connect(_on_attack_command_received)
 	GameState.defector_hurt.connect(_on_hurt)
+	GameState.defector_idle.connect(_on_idle)
 
 func _on_attack_command_received():
 	animated_sprite.play("attack")
@@ -23,4 +24,7 @@ func _on_hurt():
 	animated_sprite.play("hurt")
 	await animated_sprite.animation_finished
 	animated_sprite.play("default")
+	
+func _on_idle():
+	animated_sprite.play("idle")
 	
