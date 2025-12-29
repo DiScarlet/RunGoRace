@@ -45,18 +45,27 @@ Defector: The armor listens!
 Defector: If I hesitate— it will—
 Defector (shouting): I WON’T GO BACK!
 
-do GameState.request_attack.emit()
 do GameState.defector_attack.emit()
+do GameState.request_attack.emit()
+do GameState.defector_hurt.emit()
+
 
 - [Defend yourself] => defector_fight
-- [Try to reach him] => defector_fight
+- [Try to reach him] => defector_respond
 
 ~ defector_fight
-Defector (roaring): ORDER ABOVE ALL!
+do GameState.full_attack.emit() 
+do GameState.defector_hurt.emit()
+[wait=0.4] => defector_respond
 
-do GameState.full_attack.emit()
-[wait=0.4]
+~ defector_respond
+Defector (roaring): ORDER ABOVE ALL!
 do GameState.defector_attack.emit()
+do GameState.request_attack.emit()
+do GameState.defector_hurt.emit()
+[wait=0.4]
+do GameState.full_attack.emit()
+do GameState.defector_hurt.emit()
 
 Defector: [wait=1] They’re watching—!
 Defector: Through you! Through the armor!
@@ -66,8 +75,8 @@ Defector: Through you! Through the armor!
 
 ~ defector_end
 do GameState.full_attack.emit()
-[wait=0.5]
-do GameState.defector_die.emit()
+do GameState.defector_hurt.emit()
+do GameState.defector_hurt.emit()
 
 Defector (collapsing): You still don’t understand…
 Defector: The Crescent isn’t a place.
@@ -77,5 +86,4 @@ Defector: [wait=2] If you reach the Gate…
 Defector: He will offer you the truth.
 Defector: And take everything else.
 
-do GameState.restore_position.emit()
 => END

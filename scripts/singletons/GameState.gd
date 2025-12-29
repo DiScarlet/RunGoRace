@@ -20,6 +20,9 @@ signal mother_end(dialogueInd: int)
 
 signal change_night
 
+signal defector_attack
+signal defector_hurt
+
 func _ready():
 	GameState.start_mother.connect(_on_mother_start)
 	GameState.mother_end.connect(_on_mother_finished)
