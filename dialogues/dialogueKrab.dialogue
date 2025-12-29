@@ -1,0 +1,131 @@
+~ start
+Krab: ….
+
+do GameState.krab_attack.emit
+
+- Raise shield and hold ground => defend_1
+- Roll to the side => evade_1
+- Step in and parry => parry_1
+
+~ defend_1
+Player raises shield just in time.
+
+do GameState.krab_attack.emit
+[wait=0.1]
+do GameState.request_attack.emit
+[wait=0.3]
+do GameState.krab_attack.emit
+[wait=0.1]
+do GameState.request_attack.emit
+[wait=0.3]
+do GameState.krab_attack.emit
+[wait=0.1]
+do GameState.request_attack.emit
+[wait=0.3]
+do GameState.krab_attack.emit
+[wait=0.1]
+do GameState.request_attack.emit
+[wait=0.3]
+
+- Keep guarding => defend_loop
+
+~ defend_loop
+The blows keep coming. Your arm burns.
+
+do GameState.krab_attack.emit
+[wait=0.1]
+do GameState.request_attack.emit
+[wait=0.3]
+
+- Break away => evade_1
+- Desperate shove => shove_attempt
+
+
+
+
+~ parry_1
+You meet steel with steel.
+
+do GameState.player_attack_villager.emit
+[wait=0.2]
+do GameState.krab_hurt.emit
+
+Crescent Enforcer (surprised): …
+
+- Riposte to the torso => riposte_hit
+- Go for the weapon hand => disarm_attempt
+
+~ riposte_hit
+Your blade slips past his guard.
+
+do GameState.player_attack_villager.emit
+[wait=0.2]
+do GameState.krab_hurt.emit
+
+do GameState.krab_attack.emit
+[wait=0.1]
+
+- Fall back => evade_1
+
+~ evade_1
+You roll aside as the blade slams down.
+
+do GameState.request_attack.emit
+[wait=0.2]
+
+- Strike from behind => backstab_attempt
+
+~ backstab_attempt
+You strike — but the armor turns the blade.
+
+do GameState.full_attack.emit
+[wait=0.4]
+do GameState.krab_hurt.emit
+
+do GameState.krab_attack.emit
+[wait=0.1]
+do GameState.request_attack.emit
+
+~ shove_attempt
+You slam into him.
+
+do GameState.player_attack_villager.emit
+[wait=0.2]
+do GameState.krab_hurt.emit
+
+Krab stumbles.
+
+- Finish with a strike => finishing_blow
+- Kick him back => finishing_blow
+
+~ disarm_attempt
+You twist for the weapon—
+[wait=0.2]
+Too slow. You fail.
+do GameState.request_attack.emit
+[wait=0.3]
+do GameState.player_die.emit
+
+~ finishing_blow
+You strike with everything you have.
+
+do GameState.full_attack.emit
+[wait=0.2]
+do GameState.krab_hurt.emit
+[wait=0.1]
+do GameState.krab_hurt.emit
+[wait=0.1]
+do GameState.krab_hurt.emit
+[wait=0.3]
+
+do GameState.krab_death.emit
+
+=> END
+
+
+
+
+
+
+
+

@@ -24,6 +24,10 @@ signal defector_attack
 signal defector_hurt
 signal defector_idle
 
+signal krab_attack
+signal krab_hurt
+signal krab_death
+
 func _ready():
 	GameState.start_mother.connect(_on_mother_start)
 	GameState.mother_end.connect(_on_mother_finished)
