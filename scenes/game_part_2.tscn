@@ -2918,6 +2918,12 @@ position = Vector2(1646, 59)
 scale = Vector2(0.34273762, 0.34273773)
 texture = ExtResource("1_o5ocg")
 
+[node name="Sky5" type="Sprite2D" parent="Background"]
+z_index = -1
+position = Vector2(1646, 59)
+scale = Vector2(0.34273762, 0.34273773)
+texture = ExtResource("1_o5ocg")
+
 [node name="ColorRect2" type="ColorRect" parent="Background"]
 offset_left = 761.0
 offset_top = 223.0
@@ -2953,7 +2959,7 @@ layer_3/tile_data = PackedInt32Array(327747, 1048599, 17, 196660, 1507351, 19, 1
 
 [node name="Player" parent="." instance=ExtResource("26_4ig3s")]
 z_index = 3
-position = Vector2(288, 243)
+position = Vector2(1667, 53)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -25)

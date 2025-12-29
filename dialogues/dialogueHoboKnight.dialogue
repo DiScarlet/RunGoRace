@@ -46,8 +46,8 @@ Defector: If I hesitate— it will—
 Defector (shouting): I WON’T GO BACK!
 
 do GameState.defector_attack.emit()
+[wait=0.1]
 do GameState.request_attack.emit()
-do GameState.defector_hurt.emit()
 
 
 - [Defend yourself] => defector_fight
@@ -62,6 +62,7 @@ do GameState.defector_hurt.emit()
 Defector (roaring): ORDER ABOVE ALL!
 do GameState.defector_attack.emit()
 do GameState.request_attack.emit()
+[wait=0.01]
 do GameState.defector_hurt.emit()
 [wait=0.4]
 do GameState.full_attack.emit()

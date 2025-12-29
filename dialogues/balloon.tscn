@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqavju1s3rd2x"]
+[gd_scene load_steps=14 format=3 uid="uid://dtwltslyq0f7y"]
 
 [ext_resource type="Script" uid="uid://doomtq8pbeo53" path="res://dialogues/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -63,6 +63,18 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooonl"]
+bg_color = Color(0.05490196, 0.05490196, 0.05490196, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8117647, 0.654902, 0.43137255, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -99,6 +111,8 @@ _data = {
 &"progress": SubResource("Animation_qkmqt")
 }
 
+[sub_resource type="Theme" id="Theme_gqa88"]
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
@@ -127,6 +141,7 @@ grow_vertical = 0
 clip_children = 2
 layout_mode = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ooonl")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -143,6 +158,7 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_colors/default_color = Color(0.9607843, 0.8235294, 0.54509807, 1)
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -152,7 +168,6 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_outline_color = Color(0.1710101, 0.11562804, 0.6910277, 1)
 text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
@@ -178,10 +193,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -290.5
-offset_top = -35.0
-offset_right = 290.5
-offset_bottom = 35.0
+offset_left = -284.0
+offset_top = -178.0
+offset_right = 297.0
+offset_bottom = -108.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
@@ -192,6 +207,9 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]
 layout_mode = 2
+theme = SubResource("Theme_gqa88")
+theme_override_colors/font_color = Color(0.8117647, 0.654902, 0.43137255, 1)
+theme_override_colors/font_hover_color = Color(0.8117647, 0.654902, 0.43137255, 1)
 text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
