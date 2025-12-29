@@ -153,6 +153,84 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tao0")
 }],
 "loop": false,
 "name": &"death",
@@ -191,20 +269,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdvcq"]
-size = Vector2(37, 25)
+size = Vector2(28, 26)
 
 [node name="Krab" type="Node2D"]
 script = ExtResource("1_amwi2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dxncy")
-animation = &"hurt"
+animation = &"death"
 autoplay = "default"
-frame = 2
-frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-8.5, -13.5)
+position = Vector2(-4, -13)
 shape = SubResource("RectangleShape2D_fdvcq")
