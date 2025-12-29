@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://86rps5nk5ta1"]
+
+[ext_resource type="Texture2D" uid="uid://d4dyk8ck7q2av" path="res://assets/Hobo Knight/Spritesheets/hooded knight idle.png" id="1_biyl7"]
+[ext_resource type="Script" uid="uid://bp3g82gl0qia" path="res://scripts/hobo_knight.gd" id="1_lh8ky"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh8ky"]
+atlas = ExtResource("1_biyl7")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq1s8"]
+atlas = ExtResource("1_biyl7")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ennfq"]
+atlas = ExtResource("1_biyl7")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5u58"]
+atlas = ExtResource("1_biyl7")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3pkv"]
+atlas = ExtResource("1_biyl7")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwnlb"]
+atlas = ExtResource("1_biyl7")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ufyq"]
+atlas = ExtResource("1_biyl7")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqcp2"]
+atlas = ExtResource("1_biyl7")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sigif"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh8ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq1s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ennfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5u58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3pkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwnlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ufyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqcp2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcpk1"]
+size = Vector2(117, 85)
+
+[node name="HoboKnight" type="Node2D"]
+script = ExtResource("1_lh8ky")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sigif")
+autoplay = "default"
+frame_progress = 0.46278343
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-20.5, -0.5)
+shape = SubResource("RectangleShape2D_vcpk1")

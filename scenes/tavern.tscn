@@ -1161,11 +1161,6 @@ killzone_id = "3"
 z_index = 1
 shape = SubResource("WorldBoundaryShape2D_gbbts")
 
-[node name="MovePortal" parent="." instance=ExtResource("24_g3d30")]
-z_index = 1
-position = Vector2(815, 0)
-scale = Vector2(2, 2)
-
 [node name="Platform" parent="." instance=ExtResource("25_x0yvj")]
 z_index = 1
 position = Vector2(-145, -45)
@@ -1177,9 +1172,16 @@ libraries = {
 autoplay = "move"
 
 [node name="Player" parent="." instance=ExtResource("26_8y0nh")]
-position = Vector2(665, 22)
+position = Vector2(-204, 7)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -28)
 zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
+
+[node name="Portal" type="Node" parent="."]
+
+[node name="game" parent="Portal" instance=ExtResource("24_g3d30")]
+z_index = 1
+position = Vector2(815, 0)
+scale = Vector2(2, 2)

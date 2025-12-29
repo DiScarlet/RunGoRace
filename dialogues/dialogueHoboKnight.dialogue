@@ -1,0 +1,81 @@
+~ defector_start
+Defector (weak, startled): No— no— stay back!
+Defector (struggling): I won’t go back. I won’t!
+- I’m not here to take you back. => defector_recognition
+- Who are you? => defector_recognition
+- …(silent) => defector_recognition
+
+~ defector_recognition
+Defector (looking up, frozen): That armor…
+Defector (whisper): By the Crescent… it’s really you.
+Defector: The Commander who vanished.
+- I don’t remember that name. => defector_lore_1
+- You know me? => defector_lore_1
+- Stop talking. You’re hurt. => defector_lore_1
+
+~ defector_lore_1
+Defector (bitter laugh): Of course you don’t remember.
+Defector: They never let commanders keep their memories.
+Defector: Loyalty burns cleaner when there’s nothing left to doubt.
+- What did the Order do to us? => defector_lore_2
+- What are the monsters? => defector_lore_2
+
+~ defector_lore_2
+Defector (voice shaking): The beasts aren’t summoned.
+Defector: They’re *bound*.
+Defector: People— soldiers— villagers—
+Defector: reshaped through armor, rituals, and control sigils.
+Defector: The Crescent doesn’t rule through fear.
+Defector: It rules through *ownership*.
+- And me? => defector_lore_3
+- Why tell me this? => defector_lore_3
+
+~ defector_lore_3
+Defector (hesitant): You were different.
+Defector: You questioned the bindings.
+Defector: You delayed executions.
+Defector: That’s why they erased you instead of killing you.
+Defector: A clean weapon is better than a broken symbol.
+- Then why are you attacking me? => defector_break
+- You don’t have to fight. => defector_break
+
+~ defector_break
+Defector (clutching head): Stop— stop saying it!
+Defector: The armor listens!
+Defector: If I hesitate— it will—
+Defector (shouting): I WON’T GO BACK!
+
+do GameState.request_attack.emit()
+do GameState.defector_attack.emit()
+
+- [Defend yourself] => defector_fight
+- [Try to reach him] => defector_fight
+
+~ defector_fight
+Defector (roaring): ORDER ABOVE ALL!
+
+do GameState.full_attack.emit()
+[wait=0.4]
+do GameState.defector_attack.emit()
+
+Defector: [wait=1] They’re watching—!
+Defector: Through you! Through the armor!
+
+- [Strike] => defector_end
+- [Disarm] => defector_end
+
+~ defector_end
+do GameState.full_attack.emit()
+[wait=0.5]
+do GameState.defector_die.emit()
+
+Defector (collapsing): You still don’t understand…
+Defector: The Crescent isn’t a place.
+Defector: It’s a *promise*.
+
+Defector: [wait=2] If you reach the Gate…
+Defector: He will offer you the truth.
+Defector: And take everything else.
+
+do GameState.restore_position.emit()
+=> END
