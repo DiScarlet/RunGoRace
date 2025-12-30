@@ -61,7 +61,7 @@ attack={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/dialogueVillager1.dialogue", "res://dialogues/dialogueMonk.dialogue", "res://dialogues/dialogueOrk.dialogue", "res://dialogues/final_boss_dialogue.dialogue", "res://dialogues/mother_1.dialogue", "res://dialogues/mother_2.dialogue", "res://dialogues/dialogueHealer.dialogue", "res://dialogues/dialogueHoboKnight.dialogue", "res://dialogues/dialogueKrab.dialogue", "res://dialogues/dialogueArchivist.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/dialogueVillager1.dialogue", "res://dialogues/dialogueMonk.dialogue", "res://dialogues/dialogueOrk.dialogue", "res://dialogues/final_boss_dialogue.dialogue", "res://dialogues/mother_1.dialogue", "res://dialogues/mother_2.dialogue", "res://dialogues/dialogueHealer.dialogue", "res://dialogues/dialogueHoboKnight.dialogue", "res://dialogues/dialogueKrab.dialogue", "res://dialogues/dialogueArchivist.dialogue", "res://dialogues/mother_3.dialogue")
 
 [layer_names]
 

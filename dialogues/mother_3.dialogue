@@ -1,0 +1,81 @@
+~ mother_return
+
+(The air is still.)
+
+Mother: …
+Mother: You’re shaking.
+
+- I killed it. => mother_response_1
+- I didn’t want to. => mother_response_1
+- … => mother_response_1
+
+~ mother_response_1
+Mother: I know.
+Mother: You always shook after fights.
+Mother: Even when you pretended you didn’t.
+
+- It spoke like it understood me. => mother_response_2
+- It knew things. => mother_response_2
+- Maybe I’m not human anymore. => mother_response_2
+
+~ mother_response_2
+Mother: If you weren’t human…
+Mother: You wouldn’t be asking that question.
+
+Mother: You wouldn’t hesitate.
+Mother: You wouldn’t hurt like this.
+
+- Then why does it feel wrong to keep going? => mother_doubt
+- Why does everyone I meet suffer? => mother_doubt
+
+~ mother_doubt
+Mother: Because you see it now.
+Mother: You didn’t before.
+
+Mother: Power dulls people.
+Mother: Loss sharpens them.
+
+Mother: This road was never meant to be clean.
+
+- The Archivist said I was part of this. => mother_truth
+- It said I helped build what’s coming. => mother_truth
+
+~ mother_truth
+Mother: You did.
+Mother: And you didn’t know what it would become.
+
+Mother: Responsibility doesn’t end at ignorance.
+Mother: But neither does forgiveness.
+
+Mother: You’re still walking.
+Mother: That matters.
+
+- I don’t know if I can fix anything. => mother_push
+- I don’t know who I am without the armor. => mother_push
+
+~ mother_push
+Mother: You don’t have to fix the world.
+Mother: You don’t have to know who you are yet.
+
+Mother: You just have to choose what you do next.
+
+Mother: Stopping here won’t bring anyone back.
+Mother: And turning away now would mean the Archivist died for nothing. He knew that this moment would come eventually...
+
+- … => mother_final
+- I’ll keep going. => mother_final
+
+~ mother_final
+Mother: That’s all I ever asked.
+
+Mother: Whatever waits at the Gate…
+Mother: It will try to name you.
+
+Mother: Don’t let it decide who you are.
+
+Mother: I’ll walk with you as far as I can.
+
+(The presence fades, but the road ahead remains.)
+
+do GameState.mother_end.emit(3)
+=> END

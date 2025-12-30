@@ -1,16 +1,55 @@
 ~ crescent_start
 Crescent Captain: …
-Crescent Captain: So the armor still walks.
-Crescent Captain: I wondered how long it would take before it reached the Gate.
+Crescent Captain: So.
+Crescent Captain: The armor reaches the Gate at last.
+
+Crescent Captain: You move differently now.
+Crescent Captain: Slower.
+Crescent Captain: Heavier.
+
+Crescent Captain: You’ve bled.
+Crescent Captain: You’ve hesitated.
+Crescent Captain: You’ve buried things you weren’t meant to lose.
+
+Crescent Captain: I wondered how long it would take before you remembered.
+Crescent Captain: Or before the memories broke you.
+
 Crescent Captain: Or should I say—
 Crescent Captain: Commander of the Broken Path.
+
 Crescent Captain: You wore that title once.
-Crescent Captain: You left without finishing what you began.
-Crescent Captain: And yet… here you are.
-Crescent Captain: The monsters don't attack you now, don’t they?
+Crescent Captain: You led monsters without mercy.
+Crescent Captain: And you obeyed without question.
+
+Crescent Captain: The Archivist is silent now.
+Crescent Captain: Did you feel it when you struck it?
+Crescent Captain: That pause?
+Crescent Captain: That moment where your hands moved faster than your mind?
+
+Crescent Captain: Good.
+Crescent Captain: That means the armor still listens to you.
+
+Crescent Captain: You met the healer.
+Crescent Captain: The old one with the broken blade.
+Crescent Captain: He tried to stitch something back together, didn’t he?
+
+Crescent Captain: And the Deflector…
+Crescent Captain: Always running.
+Crescent Captain: Always refusing to choose.
+
+Crescent Captain: And your mother.
+
+Crescent Captain: …Ah.
+Crescent Captain: Even now, I can see where it cracked you.
+
+Crescent Captain: The monsters don’t attack you anymore.
+Crescent Captain: The roads bend away from your steps.
 Crescent Captain: You could end this war.
+
 Crescent Captain: Or rule it.
-Crescent Captain: Or abandon it, like before.
+
+Crescent Captain: Or abandon it —
+Crescent Captain: like you almost did before.
 
 Crescent Captain: Choose.
 
@@ -21,9 +60,16 @@ Crescent Captain: Choose.
 
 ~ crescent_destroy
 Player: This ends now.
-Crescent Captain: I was afraid you’d say that.
+
+Crescent Captain: …I was afraid you’d say that.
+
+Crescent Captain: You’ve been listening to ghosts.
+Crescent Captain: A mother who couldn’t stop you.
+Crescent Captain: A monk who forgave too easily.
+Crescent Captain: A creature you killed before it finished speaking.
+
 Crescent Captain: Hope is a dangerous thing, Commander.
-Crescent Captain: It makes people reckless.
+Crescent Captain: It teaches people to believe suffering was meaningless.
 
 do GameState.full_attack.emit()
 [wait=0.3]
@@ -39,12 +85,16 @@ do GameState.full_attack.emit()
 [wait=0.3]
 do GameState.crescent_captain_die.emit()  
 
-Crescent Captain: [wait=2] If you strike me down—
-Crescent Captain: —the chains will shatter.
-Crescent Captain: The beasts will run free.
-Crescent Captain: And so will the people.
+Crescent Captain: [wait=2] The monsters will forget their masters.
+The roads will belong to anyone strong enough to take them.
 
-Crescent Captain: [wait=2] Let’s see if the world survives your mercy.
+Crescent Captain: [wait=2] 
+Freedom will be loud.
+Messy.
+Unforgiving.
+
+Crescent Captain:
+Let’s see if the world survives your mercy.
 [wait=0.1]
 do GameState.show_final_scene.emit()  
 
@@ -55,11 +105,21 @@ Player: Step aside.
 Player: This Order will stand — but not under you.
 
 Crescent Captain: …
-Crescent Captain: So the throne finally speaks.
-Crescent Captain: You always understood what the world needs.
+Crescent Captain: Still choosing responsibility over innocence.
+
+Crescent Captain: You always did.
+Even before the armor.
+Even before the blood.
+
+Crescent Captain: The Archivist preserved knowledge.
+The healer preserved bodies.
+The Deflector preserved himself.
+
+Crescent Captain: You preserve order.
+
 Crescent Captain: Fear.
-Crescent Captain: Structure.
-Crescent Captain: Silence.
+Structure.
+Silence.
 
 - [Attack]
 do GameState.full_attack.emit()
@@ -91,6 +151,12 @@ Player: Yes.
 
 Crescent Captain: …
 Crescent Captain: Then go.
+
+Crescent Captain:
+The Order will rot without you.
+Or replace me.
+Or become something worse.
+
 Crescent Captain: The world will decide what follows.
 
 do GameState.show_final_scene.emit()  

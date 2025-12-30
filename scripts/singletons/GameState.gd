@@ -16,6 +16,7 @@ signal restore_position
 signal start_mother(dialogueInd: int)
 signal dialogue_mother_1
 signal dialogue_mother_2
+signal dialogue_mother_3
 signal mother_end(dialogueInd: int)
 
 signal change_night
@@ -52,6 +53,8 @@ func _on_mother_start(dialogueInd: int) -> void:
 		GameState.dialogue_mother_1.emit()
 	elif dialogueInd == 2:
 		GameState.dialogue_mother_2.emit()
+	elif dialogueInd == 3:
+		GameState.dialogue_mother_3.emit()
 	
 func _on_mother_finished(dialogueInd: int):
 	_on_transition_start()
@@ -70,11 +73,13 @@ func _restore_player_position(dialogueInd: int):
 		return
 		
 	var new_position
-	if(dialogueInd == 1):
+	if dialogueInd == 1:
 		new_position = Vector2(1127.0, 115.0)
-	elif (dialogueInd == 2):
+	elif dialogueInd == 2:
 		new_position = Vector2(6382.0, -51)
-	elif (dialogueInd == 100):
+	elif dialogueInd == 3:
+		new_position = Vector2(8715.0, 109.0)
+	elif dialogueInd == 100:
 		new_position = Vector2(6382.0, -51)
 	elif dialogueInd == 101:
 		new_position = Vector2(8772.0, 104.0)
