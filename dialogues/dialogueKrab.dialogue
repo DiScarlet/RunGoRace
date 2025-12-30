@@ -111,7 +111,7 @@ do GameState.krab_hurt.emit()
 do GameState.krab_hurt.emit()
 [wait=0.1]
 do GameState.krab_hurt.emit()
-[wait=0.3]
+[wait=0.1]
 
 do GameState.krab_death.emit()
 

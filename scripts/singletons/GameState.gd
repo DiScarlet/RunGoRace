@@ -73,6 +73,8 @@ func _restore_player_position(dialogueInd: int):
 		new_position = Vector2(6382.0, -51)
 	elif (dialogueInd == 100):
 		new_position = Vector2(6382.0, -51)
+	elif dialogueInd == 101:
+		new_position = Vector2(8772.0, 104.0)
 	var player = scene.get_node_or_null("Player")
 	if player:
 		print("RESTORED")
