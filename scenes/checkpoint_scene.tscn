@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://duy8uabubo1xw"]
+
+[ext_resource type="Texture2D" uid="uid://c240fdakfup5l" path="res://assets/Archivist/FREE_Kobold Warrior 2D Pixel Art/Sprites/with_outline/death.png" id="1_v1iio"]
+[ext_resource type="Script" uid="uid://cv0smqtc0rumd" path="res://scripts/checkpointSc.gd" id="2_a3n34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3n34"]
+size = Vector2(58, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3n34"]
+atlas = ExtResource("1_v1iio")
+region = Rect2(0, 0, 148, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qljdj"]
+atlas = ExtResource("1_v1iio")
+region = Rect2(148, 0, 148, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvf8c"]
+atlas = ExtResource("1_v1iio")
+region = Rect2(296, 0, 148, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl266"]
+atlas = ExtResource("1_v1iio")
+region = Rect2(444, 0, 148, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irkje"]
+atlas = ExtResource("1_v1iio")
+region = Rect2(592, 0, 148, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfp71"]
+atlas = ExtResource("1_v1iio")
+region = Rect2(740, 0, 148, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qljdj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3n34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qljdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvf8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl266")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irkje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfp71")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 7
+script = ExtResource("2_a3n34")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 3
+position = Vector2(19, -18.5)
+shape = SubResource("RectangleShape2D_a3n34")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qljdj")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://ofm7s8shq6jq"]
+[gd_scene load_steps=72 format=3 uid="uid://ofm7s8shq6jq"]
 
 [ext_resource type="Texture2D" uid="uid://cwrpcfo6k2c0h" path="res://assets/Additional Assets/Skies/Sky.jpg" id="1_o5ocg"]
 [ext_resource type="Texture2D" uid="uid://cro08l5gl18px" path="res://assets/GandalfHardcore FREE Platformer Assets/BG Dirt1.png" id="2_y0w7j"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://cs5ymeu00o74k" path="res://scenes/krab.tscn" id="31_kiftr"]
 [ext_resource type="PackedScene" uid="uid://bl5luoktcjpb4" path="res://scenes/platform_tiles.tscn" id="32_1gmti"]
 [ext_resource type="PackedScene" uid="uid://c1ajont6u0buo" path="res://scenes/move_portal.tscn" id="36_qt277"]
+[ext_resource type="PackedScene" uid="uid://duy8uabubo1xw" path="res://scenes/checkpoint_scene.tscn" id="37_7w0el"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulop0"]
 texture = ExtResource("2_y0w7j")
@@ -3207,7 +3208,7 @@ layer_3/tile_data = PackedInt32Array(720755, 589846, 0, 720757, 589846, 6, -74, 
 
 [node name="Player" parent="." instance=ExtResource("26_4ig3s")]
 z_index = 3
-position = Vector2(1245, -28)
+position = Vector2(-2707, 142)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -25)
@@ -3362,3 +3363,15 @@ autoplay = "move"
 visibility_layer = 7
 position = Vector2(3904, 75)
 scale = Vector2(2.2, 2.2)
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="Area2D" parent="Checkpoints" instance=ExtResource("37_7w0el")]
+visible = false
+position = Vector2(-37, 160)
+checkpoint_id = "CP_w2_1"
+
+[node name="Area2D2" parent="Checkpoints" instance=ExtResource("37_7w0el")]
+visible = false
+position = Vector2(-202, 164)
+checkpoint_id = "CP_w2_2"

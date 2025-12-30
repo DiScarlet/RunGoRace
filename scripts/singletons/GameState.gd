@@ -1,5 +1,10 @@
 extends Node
 
+var checkpoint_position: Vector2
+var has_checkpoint := false
+
+signal checkpoint_updated(new_position: Vector2)
+
 signal request_attack
 signal player_attack_villager
 signal ork_start_attack
