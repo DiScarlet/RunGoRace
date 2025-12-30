@@ -5902,9 +5902,9 @@ position = Vector2(6350, -52)
 
 [node name="1" parent="Portals" instance=ExtResource("45_oaba0")]
 visible = false
-position = Vector2(1139, -12)
+position = Vector2(1185, -12)
 rotation = 1.5707964
-scale = Vector2(2, 2)
+scale = Vector2(2, 5)
 
 [node name="2" parent="Portals" instance=ExtResource("45_oaba0")]
 visible = false

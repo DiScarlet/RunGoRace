@@ -2174,7 +2174,9 @@ texture = ExtResource("17_q6uat")
 10:6/0 = 0
 11:6/0 = 0
 12:6/0 = 0
+12:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, 2.8777409, 8, -0.17985725, 8, 8, -8, 8)
 13:6/0 = 0
+13:6/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, 2.8777409, 8, 5.036045, 8, 8, -8, 8)
 19:6/0 = 0
 20:6/0 = 0
 21:6/0 = 0
@@ -3208,7 +3210,7 @@ layer_3/tile_data = PackedInt32Array(720755, 589846, 0, 720757, 589846, 6, -74, 
 
 [node name="Player" parent="." instance=ExtResource("26_4ig3s")]
 z_index = 3
-position = Vector2(-2707, 142)
+position = Vector2(-2691, 144)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, -25)
