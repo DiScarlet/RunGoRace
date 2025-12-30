@@ -1,0 +1,109 @@
+~ archivist_start
+Archivist (calm, echoing): …So the armor returns.
+Archivist: And this time, it walks without memory.
+Archivist: Curious.
+
+- Who are you? => archivist_intro
+- Step back. I don’t want trouble. => archivist_intro
+- …(silent) => archivist_intro
+
+
+~ archivist_intro
+Archivist (bowing slightly): I am the Archivist.
+Archivist: Keeper of oaths. Keeper of names.
+Archivist: Keeper of everything the Crescent erased.
+
+Archivist: You are loud in the records… and yet empty.
+
+- What do you mean “empty”? => archivist_memory
+- You know who I was? => archivist_memory
+
+
+~ archivist_memory
+Archivist (sad): I know who you *were*.
+Archivist: You volunteered.
+Archivist: Not for power — but to carry guilt no one else could bear.
+
+Archivist: The armor was never meant to obey.
+Archivist: It was meant to *continue*.
+
+- Continue what? => archivist_truth
+- I didn’t agree to this. => archivist_truth
+
+
+~ archivist_truth
+Archivist: Order.
+Archivist: When rulers fall.
+Archivist: When knights hesitate.
+Archivist: When mercy slows the blade.
+
+Archivist: The Crescent does not rule the world.
+Archivist: It prevents it from changing.
+
+Archivist: And you were its sharpest edge.
+
+- Then why can’t I remember any of this? => archivist_erasure
+- So the monsters… the villages… => archivist_erasure
+
+
+~ archivist_erasure
+Archivist: Memory was the price.
+Archivist: Those who remembered broke.
+Archivist: Those who forgot endured.
+
+Archivist (closer): You asked for this.
+Archivist: You begged me to seal your past.
+
+Archivist: And now the seal is failing.
+
+- Failing how? => archivist_warning
+- Tell me how to remove the armor. => archivist_warning
+
+
+~ archivist_warning
+Archivist (tense): You cannot.
+Archivist: Not fully.
+
+Archivist: The armor reacts to threats before you do.
+Archivist: It chooses violence when you hesitate.
+
+Archivist: And now—
+
+[wait=0.4]
+Archivist (alarmed): —it has identified *me* as a risk.
+
+do GameState.player_attack_villager.emit()
+do GameState.archivist_hurt.emit()
+
+- I’m not attacking you! => archivist_loss
+- Fight it— stop! => archivist_loss
+
+~ archivist_loss
+Archivist (urgent): You must listen—
+Archivist: The Crescent’s heart lies beyond the Gate—
+Archivist: The Captain is not its master—
+
+do GameState.player_attack_villager.emit()
+do GameState.archivist_hurt.emit()
+
+Archivist (pained): …Ah.
+Archivist: So it has decided.
+
+- I didn’t mean to— => archivist_end
+- Stay back! => archivist_end
+
+
+~ archivist_end
+Archivist (weak, fading glow): Do not lie to yourself.
+Archivist: Intention no longer matters.
+
+Archivist: When you face the Captain—
+Archivist: You will not be choosing *what to do*…
+
+Archivist: …only *what to become*.
+do GameState.player_attack_villager.emit()
+do GameState.archivist_hurt.emit()
+
+[wait=0.1]
+do GameState.archivist_death.emit()
+=> END

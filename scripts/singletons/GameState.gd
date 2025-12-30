@@ -28,6 +28,9 @@ signal krab_attack
 signal krab_hurt
 signal krab_death
 
+signal archivist_hurt
+signal archivist_death
+
 func _ready():
 	GameState.start_mother.connect(_on_mother_start)
 	GameState.mother_end.connect(_on_mother_finished)
