@@ -5190,10 +5190,10 @@ layer_5/z_index = 4
 layer_5/tile_data = PackedInt32Array(-261764, 655362, 19, -261929, 589826, 19, -196393, 589826, 20, -589606, 26, 0, -65526, 2, 19, 10, 2, 20, 65666, 1572870, 13, 65667, 1638406, 13, -393172, 1179654, 6, -327636, 1179654, 7, -393171, 1245190, 6, -327635, 1245190, 7, 162, 786438, 6, 65698, 786438, 7, 163, 851974, 6, 65699, 851974, 7, 590179, 1572870, 5, 590180, 131078, 7, 524644, 131078, 6, 524645, 196614, 6, 590181, 196614, 7)
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(1875, -3)
+position = Vector2(748, -78)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -6)
+position = Vector2(0, -32)
 zoom = Vector2(4, 4)
 limit_bottom = 270
 limit_smoothed = true
@@ -5379,10 +5379,10 @@ text = "Press Space to Jump"
 
 [node name="Voice2" type="Label" parent="Hints"]
 z_index = 2
-offset_left = 622.0
-offset_top = -105.0
-offset_right = 868.0
-offset_bottom = -82.0
+offset_left = 454.0
+offset_top = -131.0
+offset_right = 700.0
+offset_bottom = -108.0
 theme_override_colors/font_color = Color(1, 0.6901961, 0.6, 1)
 theme_override_fonts/font = ExtResource("7_u5sy4")
 theme_override_font_sizes/font_size = 8
