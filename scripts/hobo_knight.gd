@@ -15,8 +15,11 @@ func _on_attack_command_received():
 	animated_sprite.play("default")
 	print("hurt vill")
 
+var started_convo = false
+
 func _on_player_entered(body):
-	if body is CharacterBody2D:
+	if body is CharacterBody2D and not started_convo:
+		started_convo = true
 		var dialogue_resource = load("res://dialogues/dialogueHoboKnight.dialogue")
 		DialogueManager.show_dialogue_balloon(dialogue_resource, "defector_start")
 

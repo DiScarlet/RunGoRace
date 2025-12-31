@@ -1,0 +1,7 @@
+Color palette form darker to lighter:
+	360568
+	5b2a86
+	7785ac
+	9ac6c5
+	a5e6ba
+	
