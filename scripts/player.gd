@@ -13,7 +13,10 @@ func _ready():
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	GameState.player_attack_villager.connect(_on_attack_command_received)
 	GameState.request_attack.connect(_on_got_attacked_command_received)
-	GameState.player_die.connect(_on_die)
+	
+	GameState.player_die.connect(_on_die)	
+	GameState.player_die_terrain.connect(_on_die_terrain)
+	
 	GameState.full_attack.connect(_on_full_attack)
 	GameState.show_final_scene.connect(_on_final_redirect)
 	GameState.restore_position.connect(restore_position)
@@ -28,6 +31,25 @@ func restore_position():
 func _on_final_redirect():
 	get_tree().change_scene_to_file("res://scenes/final.tscn")
 
+func _on_die_terrain():
+	is_attacking = true
+	animated_sprite.play("death")
+	await animated_sprite.animation_finished
+	
+	_respawn_player()
+	
+	GameState.finished_dying.emit()
+
+func _respawn_player() -> void:
+	var player_ref = $"."
+	if GameState.has_checkpoint:
+		player_ref.global_position = GameState.checkpoint_position
+	else: 
+		player_ref.global_position = Vector2(5.0, 32.0)
+	is_attacking = false
+	animated_sprite.play("default")
+	
+	
 func _on_full_attack():
 	is_attacking = true
 	animated_sprite.play("attack1")

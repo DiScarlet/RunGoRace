@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg4j21n18ttq8"]
+
+[ext_resource type="Script" uid="uid://dqw80nfu6w56r" path="res://scripts/killterrain.gd" id="1_6ble4"]
+
+[node name="Killterrain" type="Area2D"]
+collision_mask = 7
+script = ExtResource("1_6ble4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

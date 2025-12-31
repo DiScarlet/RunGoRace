@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bkgsyf20rsgs4" path="res://assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-SheetBlack.png" id="1_55bk2"]
 [ext_resource type="Script" uid="uid://cfj0w05dqfalo" path="res://scripts/kabanchyk.gd" id="1_jbwm7"]
-[ext_resource type="PackedScene" uid="uid://pkoya08bafo6" path="res://scenes/killzone.tscn" id="2_jbwm7"]
+[ext_resource type="PackedScene" uid="uid://cg4j21n18ttq8" path="res://scenes/killterrain.tscn" id="3_jbwm7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbwm7"]
 atlas = ExtResource("1_55bk2")
@@ -54,8 +54,8 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbwm7"]
-size = Vector2(29, 26)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3pyo"]
+size = Vector2(29, 27)
 
 [node name="Kabanchyk" type="Node2D"]
 script = ExtResource("1_jbwm7")
@@ -73,8 +73,8 @@ target_position = Vector2(-16, 0)
 position = Vector2(0, 8)
 target_position = Vector2(13, 0)
 
-[node name="Killzone" parent="." instance=ExtResource("2_jbwm7")]
+[node name="Killterrain" parent="." instance=ExtResource("3_jbwm7")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-1.5, 3)
-shape = SubResource("RectangleShape2D_jbwm7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killterrain"]
+position = Vector2(-1.5, 2.5)
+shape = SubResource("RectangleShape2D_f3pyo")

@@ -9,7 +9,11 @@ signal request_attack
 signal player_attack_villager
 signal ork_start_attack
 signal ork_attack
+
 signal player_die
+signal player_die_terrain
+signal finished_dying
+
 signal player_finished_attack
 signal ork_back_default
 signal full_attack

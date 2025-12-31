@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cciq4qtbvt18s" path="res://scripts/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://bvmb1nr2y013u" path="res://assets/sprites/slime_green.png" id="1_p2gj0"]
-[ext_resource type="PackedScene" uid="uid://pkoya08bafo6" path="res://scenes/killzone.tscn" id="2_n6pvg"]
+[ext_resource type="PackedScene" uid="uid://cg4j21n18ttq8" path="res://scenes/killterrain.tscn" id="3_n6pvg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
 atlas = ExtResource("1_p2gj0")
@@ -40,8 +40,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
-size = Vector2(10, 12)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjw23"]
+size = Vector2(14, 12)
 
 [node name="Slime" type="Node2D"]
 script = ExtResource("1_n6pvg")
@@ -59,8 +59,10 @@ target_position = Vector2(11, 0)
 position = Vector2(0, 4)
 target_position = Vector2(-11, 0)
 
-[node name="Killzone" parent="." instance=ExtResource("2_n6pvg")]
+[node name="Killterrain" parent="." instance=ExtResource("3_n6pvg")]
+killterrain_id = "Slime"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_0l8pv")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killterrain"]
+visibility_layer = 3
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_pjw23")
