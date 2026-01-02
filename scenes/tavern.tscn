@@ -1173,7 +1173,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Player" parent="." instance=ExtResource("26_8y0nh")]
-position = Vector2(-217, 7)
+position = Vector2(-215, 6)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -28)
